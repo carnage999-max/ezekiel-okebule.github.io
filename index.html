@@ -686,8 +686,10 @@
                     </li>
                     <li>
                       Deployed
-                      <a href="https://student-pay-backend.sevalla.app/">backend</a> on
-                      sevalla.
+                      <a href="https://student-pay-backend.sevalla.app/"
+                        >backend</a
+                      >
+                      on sevalla.
                     </li>
                   </ul>
                   <div class="mt-3 flex gap-2">
@@ -916,7 +918,14 @@
 
     <!-- AOS + main script -->
     <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-
+    <script>
+      window.va =
+        window.va ||
+        function () {
+          (window.vaq = window.vaq || []).push(arguments);
+        };
+    </script>
+    <script defer src="/_vercel/insights/script.js"></script>
     <script>
       // AOS init
       AOS.init({ once: true, duration: 600, easing: "ease-out" });
