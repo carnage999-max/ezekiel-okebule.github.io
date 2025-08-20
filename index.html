@@ -1,350 +1,983 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Ezekiel Okebule</title>
+    <meta
+      name="description"
+      content="Ezekiel Okebule - Backend Developer. Building APIs, StudentPay fullstack MVP, Django, Python, PostgreSQL."
+    />
+    <meta
+      name="keywords"
+      content="Developer backend backend developer coder reliable"
+    />
 
-<head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <!-- Favicons -->
+    <link href="assets/img/favicon.png" rel="icon" />
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
 
-  <title>Ezekiel Okebule</title>
-  <meta content="" name="description">
-  <meta content="Developer backend backend developer coder reliable" name="keywords">
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
 
-  <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+    <!-- Tailwind (CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: { primary: "#059669" },
+            fontFamily: { sans: ["Poppins", "ui-sans-serif", "system-ui"] },
+          },
+        },
+      };
+    </script>
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
 
-  <!-- Vendor CSS Files -->
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <!-- Devicon (tech icons) -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.14.0/devicon.min.css"
+    />
 
-  <!-- Template Main CSS File -->
-  <link href="assets/css/style.css" rel="stylesheet">
+    <!-- Font Awesome (icon pack) -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      referrerpolicy="no-referrer"
+    />
 
-  <!-- =======================================================
-  * Template Name: iPortfolio
-  * Updated: May 30 2023 with Bootstrap v5.3.0
-  * Template URL: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
-</head>
+    <!-- Custom (inline for single-file delivery) -->
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        overflow-y: auto; /* ensure page-level scrolling on mobile */
+      }
 
-<body>
+      /* anchor offset when using sticky navs */
+      section {
+        scroll-margin-top: 80px;
+      }
 
-  <!-- ======= Mobile nav toggle button ======= -->
-  <i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
+      /* typed element stability */
+      #typed {
+        display: inline-block;
+        min-width: 22ch;
+        min-height: 1.45rem;
+        vertical-align: middle;
+        overflow: hidden;
+        position: relative;
+      }
+      #typed.caret::after {
+        content: "";
+        display: inline-block;
+        width: 1px;
+        height: 1.05rem;
+        margin-left: 0.28rem;
+        background: currentColor;
+        vertical-align: middle;
+        animation: blink 1s steps(2, start) infinite;
+      }
+      @keyframes blink {
+        50% {
+          opacity: 0;
+        }
+      }
 
-  <!-- ======= Header ======= -->
-  <header id="header">
-    <div class="d-flex flex-column">
+      /* hero subtle parallax (elements with data-parallax) */
+      .will-change-transform {
+        will-change: transform;
+      }
 
-      <div class="profile">
-        <img src="assets/img/img.jpg" alt="" class="img-fluid rounded-circle" style="width: 200px; height: 250px;">
-        <h1 class="text-light"><a href="index.html">Ezekiel Okebule</a></h1>
-        <div class="social-links mt-3 text-center">
-          <a href="https://www.twitter.com/Ezekiel11011" class="twitter"><i class="bx bxl-twitter"></i></a>
-          <a href="https://github.com/carnage999-max" class="instagram"><i class="bx bxl-github"></i></a>
-          <a href="https://linkedin.com/ezekiel-okebule" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+      /* micro-animations for project cards */
+      .card {
+        transition: transform 220ms cubic-bezier(0.22, 1, 0.36, 1),
+          box-shadow 220ms ease, background 220ms ease, border-color 220ms ease;
+        transform-style: preserve-3d;
+      }
+      .card:hover {
+        transform: translateY(-6px) rotateX(0.6deg) rotateY(-0.6deg);
+        box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
+      }
+      .card:active {
+        transform: translateY(-2px) scale(0.995);
+      }
+      .card .spark {
+        opacity: 0;
+        transform: translateY(4px);
+        transition: opacity 200ms ease, transform 200ms ease;
+      }
+      .card:hover .spark {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* smoother animate-pulse tweak */
+      @keyframes pulse-fast {
+        0% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0.6;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+      .animate-pulse {
+        animation: pulse-fast 1s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+      }
+
+      /* mobile bottom nav */
+      .mobile-nav {
+        env(safe-area-inset-bottom);
+      }
+      .backdrop-blur-md {
+        -webkit-backdrop-filter: blur(12px);
+        backdrop-filter: blur(12px);
+      }
+
+      /* improve touch targets on mobile */
+      .tap-target {
+        min-height: 44px;
+      }
+
+      /* allow hero to breathe on small screens */
+      @media (max-width: 1024px) {
+        #hero {
+          padding-top: 3.25rem;
+          padding-bottom: 3.25rem;
+        }
+      }
+
+      /* remove default AOS inline transform flicker for parallax elements */
+      [data-parallax] {
+        transition: transform 0.12s linear;
+      }
+    </style>
+  </head>
+
+  <body class="bg-gray-900 text-gray-100 antialiased">
+    <!-- NOTE: top mobile header removed — using bottom nav only on small screens -->
+
+    <div class="min-h-screen flex">
+      <!-- LEFT SIDEBAR -->
+      <aside
+        class="w-80 bg-gray-900/60 backdrop-blur-lg border-r border-gray-800 sticky top-0 h-screen p-6 hidden lg:flex flex-col items-center"
+      >
+        <img
+          src="assets/img/img.jpg"
+          alt="Ezekiel"
+          class="w-40 h-44 object-cover rounded-xl shadow-xl ring-2 ring-gray-800"
+        />
+        <h1 class="mt-4 text-2xl font-bold text-white">Ezekiel Okebule</h1>
+        <p class="text-sm text-gray-400 mt-1">
+          Backend Developer • API Engineer
+        </p>
+
+        <div class="mt-5 w-full">
+          <nav class="space-y-2 mt-4">
+            <a
+              href="#hero"
+              class="block px-3 py-2 rounded hover:bg-gray-800 flex items-center gap-2 tap-target"
+              ><i class="fa-solid fa-house"></i> Home</a
+            >
+            <a
+              href="#about"
+              class="block px-3 py-2 rounded hover:bg-gray-800 flex items-center gap-2 tap-target"
+              ><i class="fa-solid fa-user"></i> About</a
+            >
+            <a
+              href="#skills"
+              class="block px-3 py-2 rounded hover:bg-gray-800 flex items-center gap-2 tap-target"
+              ><i class="fa-solid fa-screwdriver-wrench"></i> Skills</a
+            >
+            <a
+              href="#resume"
+              class="block px-3 py-2 rounded hover:bg-gray-800 flex items-center gap-2 tap-target"
+              ><i class="fa-solid fa-file-lines"></i> Resume</a
+            >
+            <!-- briefcase for Projects -->
+            <a
+              href="#projects"
+              class="block px-3 py-2 rounded hover:bg-gray-800 flex items-center gap-2 tap-target"
+              ><i class="fa-solid fa-briefcase"></i> Projects</a
+            >
+            <a
+              href="#contact"
+              class="block px-3 py-2 rounded hover:bg-gray-800 flex items-center gap-2 tap-target"
+              ><i class="fa-solid fa-paper-plane"></i> Contact</a
+            >
+
+            <a
+              href="https://drive.google.com/file/d/1jmAEJn5U7CcpnGERvsYRHF_69zWWPTzv/view"
+              target="_blank"
+              class="block mt-3 text-center px-4 py-2 bg-primary rounded text-black font-semibold flex items-center justify-center gap-2 tap-target"
+            >
+              <i class="fa-solid fa-download"></i> View Resume
+            </a>
+          </nav>
         </div>
-      </div>
 
-      <nav id="navbar" class="nav-menu navbar">
-        <ul>
-          <li><a href="#hero" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Home</span></a></li>
-          <li><a href="#about" class="nav-link scrollto"><i class="bx bx-user"></i> <span>About</span></a></li>
-          <li><a href="#resume" class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span>Resume</span></a></li>
-          <li><a href="#contact" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Contact</span></a></li>
-          <li><a href="https://drive.google.com/file/d/1jmAEJn5U7CcpnGERvsYRHF_69zWWPTzv/view" class="nav-link scrollto" target="_blank"><i class="bx bx-download" style="color: #007bff;"></i> <span>View Resume</span></a></li>
-        </ul>
-      </nav><!-- .nav-menu -->
-    </div>
-  </header><!-- End Header -->
+        <div class="mt-auto text-xs text-gray-500 text-center">
+          <div>© <span id="year"></span> Ezekiel Okebule</div>
+          <div class="mt-3 flex gap-3 justify-center">
+            <a
+              href="https://twitter.com/Ezekiel11011"
+              target="_blank"
+              aria-label="Twitter"
+              class="hover:text-primary text-gray-300"
+              ><i class="fa-brands fa-x-twitter text-lg"></i
+            ></a>
+            <a
+              href="https://github.com/carnage999-max"
+              target="_blank"
+              aria-label="GitHub"
+              class="hover:text-primary text-gray-300"
+              ><i class="fa-brands fa-github text-lg"></i
+            ></a>
+            <a
+              href="https://linkedin.com/ezekiel-okebule"
+              target="_blank"
+              aria-label="LinkedIn"
+              class="hover:text-primary text-gray-300"
+              ><i class="fa-brands fa-linkedin text-lg"></i
+            ></a>
+          </div>
+        </div>
+      </aside>
 
-  <!-- ======= Hero Section ======= -->
-  <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
-    <div class="hero-container" data-aos="fade-in">
-      <h1>Ezekiel Okebule</h1>
-      <p><span class="typed" data-typed-items="Backend Developer"></span></p>
-      <p class="p-6">
-        <a href="https://drive.google.com/file/d/1jmAEJn5U7CcpnGERvsYRHF_69zWWPTzv/view" class="nav-link" target="_blank">
-          <i class="bx bx-download" style="color: #007bff;"></i><span class="typed">View Resume</span></a>
-      </p>
-    </div>
-  </section><!-- End Hero -->
-
-  <main id="main">
-
-    <!-- ======= About Section ======= -->
-    <section id="about" class="about">
-      <div class="container">
-
-        <div class="section-title">
-          <h2>About</h2>
+      <!-- RIGHT CONTENT -->
+      <!-- remove nested scroll to fix mobile "stuck" scrolling -->
+      <main class="flex-1">
+        <!-- HERO -->
+        <section
+          id="hero"
+          class="relative min-h-[55vh] flex items-center p-8 lg:p-16 overflow-hidden"
+        >
+          <!-- parallax background blob -->
+          <div
+            class="pointer-events-none absolute inset-0 -z-10 will-change-transform"
+            data-parallax="0.15"
+          >
+            <div
+              class="absolute -top-24 -left-24 w-[40rem] h-[40rem] bg-emerald-600/10 rounded-full blur-3xl"
+            ></div>
+            <div
+              class="absolute -bottom-24 -right-24 w-[36rem] h-[36rem] bg-cyan-500/10 rounded-full blur-3xl"
+            ></div>
           </div>
 
-        <div class="row">
-          <div class="col-lg-4" data-aos="fade-right">
-            <img src="assets/img/img.jpg" class="img-fluid rounded-edge" alt="">
-          </div>
-          <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
-            <h3>Backend Developer</h3>
-            <div class="row">
-              <div class="col-lg-6">
-                <ul>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Phone:</strong> <span><a href="tel:+2349159167551">+234 9159167551</a></span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>City:</strong> <span>Lagos, Nigeria</span></li>
-                </ul>
+          <div
+            class="max-w-4xl mx-auto w-full will-change-transform"
+            data-parallax="0.05"
+          >
+            <div
+              class="rounded-2xl bg-gradient-to-b from-gray-800/70 to-transparent p-6 md:p-8 ring-1 ring-gray-800"
+              data-aos="fade-up"
+            >
+              <h2
+                class="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight"
+              >
+                Hi, I&quot;m <span class="text-white">Ezekiel</span> 👋
+              </h2>
+
+              <p class="mt-3 text-gray-300 max-w-2xl">
+                Backend developer focused on building reliable APIs and
+                production services.
+              </p>
+
+              <div class="mt-6 flex flex-wrap gap-3">
+                <a
+                  href="https://github.com/carnage999-max"
+                  target="_blank"
+                  class="px-4 py-2 rounded bg-gray-800 hover:bg-gray-700 inline-flex items-center gap-2 tap-target"
+                >
+                  <i class="fa-brands fa-github"></i> GitHub
+                </a>
+                <a
+                  href="https://linkedin.com/ezekiel-okebule"
+                  target="_blank"
+                  class="px-4 py-2 rounded bg-gray-800 hover:bg-gray-700 inline-flex items-center gap-2 tap-target"
+                >
+                  <i class="fa-brands fa-linkedin"></i> LinkedIn
+                </a>
+                <a
+                  href="https://drive.google.com/file/d/1jmAEJn5U7CcpnGERvsYRHF_69zWWPTzv/view"
+                  target="_blank"
+                  class="px-4 py-2 rounded bg-primary text-black font-semibold inline-flex items-center gap-2 tap-target"
+                >
+                  <i class="fa-solid fa-file"></i> View Resume
+                </a>
               </div>
-              <div class="col-lg-6">
-                <ul>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Degree:</strong> <span>Bachelor</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Email:</strong> <span><a href="mailto:jamesezekiel039@gmail.com">jamesezekiel039@gmail.com</a></span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Freelance:</strong> <span>Available</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Internship:</strong> <span>Available</span></li>
-                </ul>
+
+              <!-- typed (stable size + caret) -->
+              <div class="mt-6 text-sm text-gray-400">
+                <span
+                  id="typed"
+                  class="inline-block px-2 py-1 rounded bg-gray-800 caret"
+                ></span>
               </div>
             </div>
           </div>
-        </div>
+        </section>
 
-      </div>
-    </section><!-- End About Section -->
+        <!-- ABOUT -->
+        <section id="about" class="p-8 lg:p-16" data-aos="fade-up">
+          <div class="max-w-4xl mx-auto grid lg:grid-cols-3 gap-8 items-start">
+            <div class="lg:col-span-1">
+              <h3 class="text-2xl font-semibold">About</h3>
+              <p class="mt-3 text-gray-300">
+                I build production-ready APIs and backend services, focusing on
+                reliability and maintainability. Recent work includes StudentPay
+                — a hosted fullstack MVP for university payments.
+              </p>
 
-    <!-- ======= Skills Section ======= -->
-    <section id="skills" class="skills section-bg">
-      <div class="container">
+              <div class="mt-6 space-y-2 text-sm text-gray-400">
+                <div>
+                  <strong>Phone:</strong>
+                  <a href="tel:+2349159167551" class="text-gray-200"
+                    >+234 9159167551</a
+                  >
+                </div>
+                <div>
+                  <strong>Email:</strong>
+                  <a
+                    href="mailto:jamesezekiel039@gmail.com"
+                    class="text-gray-200"
+                    >jamesezekiel039@gmail.com</a
+                  >
+                </div>
+                <div><strong>Location:</strong> Lagos, Nigeria</div>
+                <div><strong>Freelance / Internship:</strong> Available</div>
+              </div>
+            </div>
 
-        <div class="section-title">
-          <h2>Skills</h2>
+            <div class="lg:col-span-2 space-y-6">
+              <div class="grid sm:grid-cols-3 gap-4">
+                <div class="p-4 rounded-xl bg-gray-800/60 ring-1 ring-gray-800">
+                  <div class="text-sm text-gray-400">Experience</div>
+                  <div class="mt-2 font-semibold text-white">
+                    Backend Developer @ Goufer PLC
+                  </div>
+                  <div class="text-xs text-gray-400">May 2024 - Nov 2024</div>
+                </div>
+                <div class="p-4 rounded-xl bg-gray-800/60 ring-1 ring-gray-800">
+                  <div class="text-sm text-gray-400">Education</div>
+                  <div class="mt-2 font-semibold text-white">
+                    BSc Computer Science
+                  </div>
+                  <div class="text-xs text-gray-400">
+                    Olabisi Onabanjo University
+                  </div>
+                </div>
+                <div class="p-4 rounded-xl bg-gray-800/60 ring-1 ring-gray-800">
+                  <div class="text-sm text-gray-400">Focus</div>
+                  <div class="mt-2 font-semibold text-white">
+                    API, Payments, Devops basics
+                  </div>
+                  <div class="text-xs text-gray-400">
+                    Python • Django • PostgreSQL
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="row gy-4 justify-content-center" data-aos="zoom-in" data-aos-delay="250">
-            <div class="col-xl-2 col-md-4">
-                <h3>Django</h3>
-            </div>
-            <div class="col-xl-2 col-md-4">
-              <h3>Python</h3>
-            </div>
-            <div class="col-xl-2 col-md-4">
-              <h3>HTML</h3>
-            </div>
-            <div class="col-xl-2 col-md-4">
-              <h3>JavaScript</h3>
-            </div>
-            <div class="col-xl-2 col-md-4">
-              <h3>Bootstrap CSS</h3>
-            </div>
-            <div class="col-xl-2 col-md-4">
-              <h3>Shell Scripting</h3>
-            </div>
-            <div class="col-xl-2 col-md-4">
-              <h3><i class="bx bxl-github"></i> GitHub</h3>
-            </div>
-            <div class="col-xl-2 col-md-4">
-              <h3>SQL</h3>
-            </div>
-            <div class="col-xl-2 col-md-4">
-              <h3>PostgreSQL</h3>
-            </div>
-            <div class="col-xl-2 col-md-4">
-              <h3></h3>
-            </div>
-            <div class="col-xl-2 col-md-4">
-              <h3>REST API</h3>
-            </div>
-          </div>
+        </section>
 
-          </div>
-        </div>
-
-      </div>
-    </section><!-- End Skills Section -->
-
-<!-- ======= Resume Section ======= -->
-<section id="resume" class="resume">
-  <div class="container">
-
-    <div class="section-title">
-      <h2>Resume</h2>
-      <p>
-        Detail-oriented backend developer with a track record of creating cutting-edge websites and powerful APIs. Dedicated to delivering innovative digital
-solutions with a focus on precision and excellence.
-      </p>
-    </div>
-
-    <div class="row">
-      <div class="col-lg-6" data-aos="fade-up">
-        <h3 class="resume-title">Sumary</h3>
-        <div class="resume-item pb-0">
-          <h4>Ezekiel Okebule</h4>
-          <p><em>Innovative and ready-to-learn Backend developer with 1+ years of experience in developing powerful API solutions.</em></p>
-          <ul>
-            <li>Lagos, Nigeria</li>
-            <li><a href="tel:+234 9159167551">+234 9159167551</a></li>
-            <li><a href="mailto:jamesezekiel039@gmail.com">jamesezekiel039@gmail.com</a></li>
-          </ul>
-        </div>
-
-        <h3 class="resume-title">Education</h3>
-        <div class="resume-item">
-          <h4>BSc. Computer Science</h4>
-          <h5>2021 - 2025 (in view)</h5>
-          <p><em>Olabisi Onabanjo University, Ogun, Nigeria</em></p>
-          <h3 class="resume-title">Relevant Courses</h3>
-          <ul>
-            <li>Data Structures and Algorithms</li>
-            <li>Object Oriented Programming</li>
-            <li>Database Management Systems</li>
-            <li>Data Analysis</li>
-            <li>Asynchronous web programming</li>
-          </ul>
-          </div>
-      </div>
-      <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-        <h3 class="resume-title">Experience</h3>
-        <div class="resume-item">
-          <h4>Web developer Intern @ ZURI</h4>
-          <h5>June 2020 - August 2020</h5>
-          <p><em><i class="bi bi-laptop"></i> Remote</em></p>
-          <ul>
-            <li>Built responsive, accessible, and dynamic web pages to enable users to easily navigate site.</li>
-            <li>Created API endpoints for mobile apps, user authentication and authorization</li>
-          </ul>
-        </div>
-        <div class="resume-item">
-          <h4>Backend developer @ Goufer PLC</h4>
-          <h5>May 2024 - November 2024</h5>
-          <p><em><i class="bi bi-laptop"></i> Hybrid</em></p>
-          <ul>
-            <li>Designed complex <i>RESTful</i> APIs using Django Rest Framework</li>
-            <li>Implemented Websockets in API development for asynchronous communication.</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <h3 class="resume-title">Projects</h3>
-      <div class="col-lg-6" data-aos="fade-up">
-        <div class="resume-item">
-          <h4>Wordh3lp</h4>
-          <p><b>Technologies used: </b><em>Django, HTML, CSS, Bootstrap, JavaScript, GitHub (Version Control)</em></p>
-            <p>
-              <a href="https://carnage.pythonanywhere.com">Wordh3lp</a> is a Django-powered tool that
-              allows users to get the meanings of English
-              words, synonyms of that word, anagrams.
+        <!-- SKILLS -->
+        <section
+          id="skills"
+          class="p-8 lg:p-16 bg-gradient-to-b from-transparent to-gray-900/10"
+          data-aos="fade-up"
+        >
+          <div class="max-w-4xl mx-auto">
+            <h3 class="text-2xl font-semibold">Skills</h3>
+            <p class="text-gray-400 mt-2">
+              Technologies and tools I use frequently.
             </p>
-          <ul>
-            <li>Incorporated API calls to a deployed database to search for words, their definitions, synonyms and anagrams if any.</li>
-            <li>Made use of permutations library to scramble words.</li>
-          </ul>
-        </div>
-      </div>
-      <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-        <div class="resume-item">
-          <h4>CampusCurrents</h4>
-          <p><b>Technologies Used: </b><em>Django, HTML, CSS, Bootstrap, JavaScript, GitHub (Version Control)</em></p>
-          <p>
-            <a href="https://campuscurrents.pythonanywhere.com">CampusCurrents</a> is a blog website that allows users to view posts, create posts, comment and much more.
-          </p>
-          <ul>
-            <li>
-              Created blog API whereby other developers can consume for their project
-            </li>
-          </ul>
 
-          <h3 class="resume-title">Other projects</h3>
-          <a href="https://11011.pythonanywhere.com">GPA Calculator</a><br>
-          <a href="https://getsource.pythonanywhere.com">Webpage source</a>
-          <i class="bx bxl-github"></i> <a href="https://github.com/carnage999-max/getSourceCode">View on GitHub</a>
-        </div>
-      </div>
-    </div>  </div>
-</section><!-- End Resume Section -->
-
-
-    <!-- ======= Contact Section ======= -->
-    <section id="contact" class="contact">
-      <div class="container">
-
-        <div class="section-title">
-          <h2>Contact</h2>
-          <p>Contact me </p>
-        </div>
-
-        <div class="row" data-aos="fade-in">
-
-          <div class="col-lg-5 d-flex align-items-stretch">
-            <div class="info">
-              <div class="email">
-                <i class="bi bi-envelope"></i>
-                <h4>Email:</h4>
-                <p><a href="mailto:jamesezekiel039@gmail.com">jamesezekiel039@gmail.com</a></p>
+            <div
+              class="mt-4 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4"
+            >
+              <div
+                class="p-4 rounded-xl bg-gray-800/50 ring-1 ring-gray-800 flex items-center gap-3"
+              >
+                <i class="devicon-django-plain colored text-2xl"></i>
+                <div>
+                  <div class="font-semibold">Django</div>
+                  <div class="text-xs text-gray-400">APIs, authentication</div>
+                </div>
               </div>
 
-              <div class="phone">
-                <i class="bi bi-phone"></i>
-                <h4>Call:</h4>
-                <p><a href="tel:+2349159167551">+234 9159167551</a></p>
+              <div
+                class="p-4 rounded-xl bg-gray-800/50 ring-1 ring-gray-800 flex items-center gap-3"
+              >
+                <i class="devicon-python-plain colored text-2xl"></i>
+                <div>
+                  <div class="font-semibold">Python</div>
+                  <div class="text-xs text-gray-400">
+                    Scripting & backend logic
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="p-4 rounded-xl bg-gray-800/50 ring-1 ring-gray-800 flex items-center gap-3"
+              >
+                <i class="devicon-postgresql-plain colored text-2xl"></i>
+                <div>
+                  <div class="font-semibold">PostgreSQL</div>
+                  <div class="text-xs text-gray-400">Relational DB design</div>
+                </div>
+              </div>
+
+              <div
+                class="p-4 rounded-xl bg-gray-800/50 ring-1 ring-gray-800 flex items-center gap-3"
+              >
+                <i class="devicon-redis-plain text-2xl"></i>
+                <div>
+                  <div class="font-semibold">Redis</div>
+                  <div class="text-xs text-gray-400">Caching & queues</div>
+                </div>
+              </div>
+
+              <div
+                class="p-4 rounded-xl bg-gray-800/50 ring-1 ring-gray-800 flex items-center gap-3"
+              >
+                <i class="devicon-nextjs-original text-2xl"></i>
+                <div>
+                  <div class="font-semibold">Next.js</div>
+                  <div class="text-xs text-gray-400">Frontend & SSR</div>
+                </div>
+              </div>
+
+              <div
+                class="p-4 rounded-xl bg-gray-800/50 ring-1 ring-gray-800 flex items-center gap-3"
+              >
+                <i class="devicon-typescript-plain colored text-2xl"></i>
+                <div>
+                  <div class="font-semibold">TypeScript</div>
+                  <div class="text-xs text-gray-400">Typed JS</div>
+                </div>
+              </div>
+
+              <div
+                class="p-4 rounded-xl bg-gray-800/50 ring-1 ring-gray-800 flex items-center gap-3"
+              >
+                <i class="devicon-docker-plain colored text-2xl"></i>
+                <div>
+                  <div class="font-semibold">Docker</div>
+                  <div class="text-xs text-gray-400">Containers & images</div>
+                </div>
+              </div>
+
+              <div
+                class="p-4 rounded-xl bg-gray-800/50 ring-1 ring-gray-800 flex items-center gap-3"
+              >
+                <i class="devicon-git-plain colored text-2xl"></i>
+                <div>
+                  <div class="font-semibold">Git</div>
+                  <div class="text-xs text-gray-400">Version control</div>
+                </div>
+              </div>
+
+              <div
+                class="p-4 rounded-xl bg-gray-800/50 ring-1 ring-gray-800 flex items-center gap-3"
+              >
+                <i class="fa-solid fa-server text-2xl"></i>
+                <div>
+                  <div class="font-semibold">CI / CD</div>
+                  <div class="text-xs text-gray-400">GitHub Actions, CI</div>
+                </div>
+              </div>
+
+              <div
+                class="p-4 rounded-xl bg-gray-800/50 ring-1 ring-gray-800 flex items-center gap-3"
+              >
+                <i class="fa-solid fa-shield-halved text-2xl"></i>
+                <div>
+                  <div class="font-semibold">Auth</div>
+                  <div class="text-xs text-gray-400">OAuth, JWT, RBAC</div>
+                </div>
+              </div>
+
+              <div
+                class="p-4 rounded-xl bg-gray-800/50 ring-1 ring-gray-800 flex items-center gap-3"
+              >
+                <i class="fa-solid fa-vial text-2xl"></i>
+                <div>
+                  <div class="font-semibold">Testing</div>
+                  <div class="text-xs text-gray-400">Unit & integration</div>
+                </div>
+              </div>
+
+              <div
+                class="p-4 rounded-xl bg-gray-800/50 ring-1 ring-gray-800 flex items-center gap-3"
+              >
+                <i class="fa-solid fa-network-wired text-2xl"></i>
+                <div>
+                  <div class="font-semibold">HTTP / Websockets</div>
+                  <div class="text-xs text-gray-400">Realtime & REST</div>
+                </div>
               </div>
             </div>
 
+            <div class="mt-4 text-sm text-gray-400">
+              <strong>Currently learning:</strong> Go • Solidity • ML/AI
+            </div>
           </div>
+        </section>
 
-          <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
-            <div class="social-links mt-3 text-center">
-              <p>
-                I'm on <em href="" class="twitter"><i class="bx bxl-twitter"></i></em> Twitter!
-                <a href="https://twitter.com/Ezekiel11011" data-aos="fade-in">@Ezekiel11011</a>
-              </p><br>
-              <p>
-                Also on <span class="bx bxl-linkedin"></span> LinkedIn
-                <a href="https://linkedin.com/ezekiel-okebule" data-aos="fade-in">@ezekiel-okebule</a>
-              </p><br>
-              <p>
-                Check out my <span class="bx bxl-github"></span> GitHub repositories!
-                <a href="https://github.com/carnage999-max">@carnage999-max</a>
+        <!-- RESUME / EXPERIENCE -->
+        <section id="resume" class="p-8 lg:p-16" data-aos="fade-up">
+          <div class="max-w-4xl mx-auto">
+            <div class="mb-6">
+              <h3 class="text-2xl font-semibold">Resume</h3>
+              <p class="text-gray-400 mt-2">
+                Detail-oriented backend developer with a track record of
+                building APIs and web services. Dedicated to shipping reliable
+                solutions and improving system design.
               </p>
             </div>
+
+            <div class="grid lg:grid-cols-2 gap-8">
+              <!-- left -->
+              <div>
+                <h4 class="text-lg font-semibold mb-3">Summary</h4>
+                <div class="p-4 rounded-xl bg-gray-800/50 ring-1 ring-gray-800">
+                  <h5 class="font-semibold">Ezekiel Okebule</h5>
+                  <p class="text-sm text-gray-300 italic">
+                    Innovative backend developer with experience building
+                    production APIs and fullstack integrations.
+                  </p>
+                  <ul class="mt-3 text-sm text-gray-400 space-y-1">
+                    <li>Lagos, Nigeria</li>
+                    <li>
+                      <a href="tel:+2349159167551" class="text-gray-200"
+                        >+234 9159167551</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="mailto:jamesezekiel039@gmail.com"
+                        class="text-gray-200"
+                        >jamesezekiel039@gmail.com</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+
+                <h4 class="text-lg font-semibold mt-6 mb-3">Education</h4>
+                <div class="p-4 rounded-xl bg-gray-800/50 ring-1 ring-gray-800">
+                  <h5 class="font-semibold">BSc. Computer Science</h5>
+                  <div class="text-sm text-gray-400">
+                    2021 - 2025 (Graduated)
+                  </div>
+                  <p class="mt-2 text-sm text-gray-300 italic">
+                    Olabisi Onabanjo University, Ogun, Nigeria
+                  </p>
+                </div>
+              </div>
+
+              <!-- right -->
+              <div>
+                <h4 class="text-lg font-semibold mb-3">Experience</h4>
+                <div class="space-y-4">
+                  <!-- New entry: Software Developer Intern, Zuri Team -->
+                  <div
+                    class="p-4 rounded-xl bg-gray-800/50 ring-1 ring-gray-800"
+                  >
+                    <h5 class="font-semibold">
+                      Software Developer Intern — Zuri Team
+                    </h5>
+                    <div class="text-sm text-gray-400">
+                      Feb 2020 - Aug 2020 • Remote
+                    </div>
+                    <ul
+                      class="mt-3 text-sm text-gray-300 list-disc list-inside"
+                    >
+                      <li>
+                        Built dynamic, responsive web pages to improve site
+                        usability.
+                      </li>
+                      <li>
+                        Developed API endpoints for mobile app consumption.
+                      </li>
+                      <li>
+                        Implemented secure authentication and authorization
+                        logic.
+                      </li>
+                      <li>
+                        Co-led a team project to build a CSV chunking API.
+                      </li>
+                    </ul>
+                  </div>
+
+                  <!-- existing Web developer Intern (kept) -->
+                  <div
+                    class="p-4 rounded-xl bg-gray-800/50 ring-1 ring-gray-800"
+                  >
+                    <h5 class="font-semibold">
+                      Backend developer @ Goufer PLC
+                    </h5>
+                    <div class="text-sm text-gray-400">
+                      May 2024 - November 2024 • Hybrid
+                    </div>
+                    <ul
+                      class="mt-3 text-sm text-gray-300 list-disc list-inside"
+                    >
+                      <li>
+                        Designed complex <em>RESTful</em> APIs using Django Rest
+                        Framework
+                      </li>
+                      <li>
+                        Implemented Websockets in API development for
+                        asynchronous communication.
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Projects -->
+            <div id="projects" class="mt-10" data-aos="fade-up">
+              <h4 class="text-lg font-semibold mb-4">Projects</h4>
+
+              <div class="grid md:grid-cols-2 gap-6" id="projects-grid">
+                <!-- StudentPay -->
+                <article
+                  class="card p-5 rounded-xl bg-gray-800/50 ring-1 ring-gray-800 group"
+                >
+                  <div class="flex items-center justify-between">
+                    <h5 class="font-semibold">StudentPay</h5>
+                    <i
+                      class="spark fa-solid fa-stars text-primary/80 transition-opacity"
+                    ></i>
+                  </div>
+                  <p class="text-sm text-gray-300 mt-2">
+                    <strong>Technologies:</strong> Django, DRF, Next.js,
+                    PostgreSQL, Redis, Paystack, Supabase storage
+                  </p>
+                  <p class="mt-2 text-sm text-gray-300">
+                    <a
+                      href="https://student-pay.sevalla.app/"
+                      id="studentpay-demo"
+                      class="text-primary"
+                      >Live demo</a
+                    >
+                    — Hosted fullstack MVP for departmental payments and PDF
+                    receipts.
+                  </p>
+                  <ul class="mt-3 text-sm text-gray-400 list-disc list-inside">
+                    <li>
+                      Designed payment API(using third-party platform),
+                      verification callbacks, pagination and PDF receipts
+                      (ReportLab).
+                    </li>
+                    <li>
+                      Deployed
+                      <a href="https://student-pay-backend.sevalla.app/"></a> on
+                      sevalla.
+                    </li>
+                  </ul>
+                  <div class="mt-3 flex gap-2">
+                    <a
+                      href="https://github.com/carnage999-max/student-pay-backend"
+                      target="_blank"
+                      class="px-3 py-1 rounded bg-gray-700 inline-flex items-center gap-2 hover:bg-gray-600"
+                    >
+                      <i class="fa-brands fa-github"></i> GitHub
+                    </a>
+                  </div>
+                </article>
+
+                <!-- File Splitter API -->
+                <article
+                  class="card p-5 rounded-xl bg-gray-800/50 ring-1 ring-gray-800 group"
+                >
+                  <div class="flex items-center justify-between">
+                    <h5 class="font-semibold">File Splitter API</h5>
+                    <i
+                      class="spark fa-solid fa-wand-magic-sparkles text-primary/80"
+                    ></i>
+                  </div>
+                  <p class="text-sm text-gray-300 mt-2">
+                    <strong>Technologies:</strong> Python, Django REST
+                    Framework, Supabase storage
+                  </p>
+                  <p class="mt-2 text-sm text-gray-300">
+                    <a
+                      href="https://csvbyte.pythonanywhere.com/"
+                      id="filesplit-demo"
+                      class="text-primary"
+                      >Live demo / docs</a
+                    >
+                    — Designed and built a microservice API for uploading,
+                    splitting, and compressing large CSV files.
+                  </p>
+                  <ul class="mt-3 text-sm text-gray-400 list-disc list-inside">
+                    <li>CSV upload → chunking → zipping → Supabase storage.</li>
+                    <li>Background job flow + cleanup policy.</li>
+                  </ul>
+                  <div class="mt-3 flex gap-2">
+                    <a
+                      href="https://github.com/carnage999-max/file-splitter-api"
+                      target="_blank"
+                      class="px-3 py-1 rounded bg-gray-700 inline-flex items-center gap-2 hover:bg-gray-600"
+                      ><i class="fa-brands fa-github"></i> GitHub</a
+                    >
+                  </div>
+                </article>
+
+                <!-- Task Management API -->
+                <article
+                  class="card p-5 rounded-xl bg-gray-800/50 ring-1 ring-gray-800 group"
+                >
+                  <div class="flex items-center justify-between">
+                    <h5 class="font-semibold">Task Management API</h5>
+                    <i class="spark fa-solid fa-bolt text-primary/80"></i>
+                  </div>
+                  <p class="text-sm text-gray-300 mt-2">
+                    <strong>Technologies:</strong> Django REST Framework,
+                    PostgreSQL
+                  </p>
+                  <p class="mt-2 text-sm text-gray-300">
+                    <a
+                      href="https://task-mgt-api-ehvi.onrender.com/"
+                      id="taskapi-demo"
+                      class="text-primary"
+                      >API docs</a
+                    >
+                    — REST API with features like task scheduling, timezone
+                    support, and Telegram/email reminders.
+                  </p>
+                  <ul class="mt-3 text-sm text-gray-400 list-disc list-inside">
+                    <li>
+                      Utilized Celery with Redis for background task handling.
+                    </li>
+                    <li>Implemented custom validators for deadlines.</li>
+                  </ul>
+                  <div class="mt-3 flex gap-2">
+                    <a
+                      href="https://github.com/carnage999-max/task-mgt-api"
+                      target="_blank"
+                      class="px-3 py-1 rounded bg-gray-700 inline-flex items-center gap-2 hover:bg-gray-600"
+                      ><i class="fa-brands fa-github"></i> GitHub</a
+                    >
+                  </div>
+                </article>
+
+                <!-- CAAS -->
+                <article
+                  class="card p-5 rounded-xl bg-gray-800/50 ring-1 ring-gray-800 group"
+                >
+                  <div class="flex items-center justify-between">
+                    <h5 class="font-semibold">
+                      CAAS (Courier as a Service) - Ongoing
+                    </h5>
+                    <i class="spark fa-solid fa-truck-fast text-primary/80"></i>
+                  </div>
+                  <p class="text-sm text-gray-300 mt-2">
+                    <strong>Technologies:</strong> Django, Websockets,
+                    PostgreSQL
+                  </p>
+                  <p class="mt-2 text-sm text-gray-300">
+                    <a href="#" id="caas-demo" class="text-primary" disabled
+                      >Concept & MVP</a
+                    >
+                    — Connect retailers to couriers for on-demand deliveries.
+                  </p>
+                  <ul class="mt-3 text-sm text-gray-400 list-disc list-inside">
+                    <li>Partner flow, courier assignment, ordering APIs.</li>
+                    <li>
+                      PWA vendor app + React Native courier/customer apps.
+                    </li>
+                  </ul>
+                </article>
+              </div>
+            </div>
+
+            <!-- GitHub Stats -->
+            <div id="stats" class="mt-10" data-aos="fade-up">
+              <h4 class="text-lg font-semibold mb-4">📊 GitHub Stats</h4>
+              <div class="max-w-4xl mx-auto grid gap-4">
+                <!-- Primary overall stats -->
+                <img
+                  src="https://github-readme-stats.vercel.app/api?username=Carnage999-max&theme=dark&hide_border=false&include_all_commits=true&count_private=true"
+                  alt="GitHub stats for Carnage999-max"
+                  class="w-full rounded-xl shadow-md"
+                  loading="lazy"
+                />
+                <!-- Streak -->
+                <img
+                  src="https://nirzak-streak-stats.vercel.app/?user=Carnage999-max&theme=dark&hide_border=false"
+                  alt="GitHub streak stats for Carnage999-max"
+                  class="w-full rounded-xl shadow-md"
+                  loading="lazy"
+                />
+                <!-- Top languages (compact) -->
+                <img
+                  src="https://github-readme-stats.vercel.app/api/top-langs/?username=Carnage999-max&theme=dark&hide_border=false&include_all_commits=true&count_private=true&layout=compact"
+                  alt="Top languages for Carnage999-max"
+                  class="w-full rounded-xl shadow-md"
+                  loading="lazy"
+                />
+              </div>
+            </div>
           </div>
+        </section>
 
-        </div>
+        <!-- CONTACT -->
+        <section id="contact" class="p-8 lg:p-16" data-aos="fade-up">
+          <div class="max-w-4xl mx-auto">
+            <h3 class="text-2xl font-semibold">Contact</h3>
+            <p class="text-gray-400 mt-2">
+              Open to freelance and internship opportunities.
+            </p>
+            <div class="mt-5 grid sm:grid-cols-2 gap-4">
+              <a
+                href="mailto:jamesezekiel039@gmail.com"
+                class="p-4 rounded-xl ring-1 ring-gray-800 bg-gray-800/50 hover:bg-gray-800 flex items-center gap-3"
+              >
+                <i class="fa-solid fa-envelope text-xl text-primary"></i>
+                <div>
+                  <div class="font-semibold">Email</div>
+                  <div class="text-sm text-gray-400">
+                    jamesezekiel039@gmail.com
+                  </div>
+                </div>
+              </a>
+              <a
+                href="tel:+2349159167551"
+                class="p-4 rounded-xl ring-1 ring-gray-800 bg-gray-800/50 hover:bg-gray-800 flex items-center gap-3"
+              >
+                <i class="fa-solid fa-phone text-xl text-primary"></i>
+                <div>
+                  <div class="font-semibold">Phone</div>
+                  <div class="text-sm text-gray-400">+234 9159167551</div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </section>
 
-      </div>
-    </section><!-- End Contact Section -->
-
-  </main><!-- End #main -->
-
-  <!-- ======= Footer ======= -->
-  <footer id="footer">
-    <div class="container">
-      <div class="copyright">
-        Ezekiel Okebule
-      </div>
+        <footer class="p-6 text-center text-gray-500">
+          Built with Tailwind • Keep it simple, ship it fast.
+        </footer>
+      </main>
     </div>
-  </footer><!-- End  Footer -->
 
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+    <!-- MOBILE BOTTOM NAV -->
+    <nav
+      class="lg:hidden fixed bottom-0 inset-x-0 z-40 bg-gray-900/80 backdrop-blur-md border-t border-gray-800"
+    >
+      <div class="max-w-6xl mx-auto px-6 py-2 grid grid-cols-5 text-xs">
+        <a
+          href="#hero"
+          class="flex flex-col items-center py-2 tap-target text-gray-300"
+          ><i class="fa-solid fa-house text-base"></i><span>Home</span></a
+        >
+        <a
+          href="#about"
+          class="flex flex-col items-center py-2 tap-target text-gray-300"
+          ><i class="fa-solid fa-user text-base"></i><span>About</span></a
+        >
+        <a
+          href="#skills"
+          class="flex flex-col items-center py-2 tap-target text-gray-300"
+          ><i class="fa-solid fa-screwdriver-wrench text-base"></i
+          ><span>Skills</span></a
+        >
+        <!-- briefcase for Projects -->
+        <a
+          href="#projects"
+          class="flex flex-col items-center py-2 tap-target text-gray-300"
+          ><i class="fa-solid fa-briefcase text-base"></i
+          ><span>Projects</span></a
+        >
+        <a
+          href="#contact"
+          class="flex flex-col items-center py-2 tap-target text-gray-300"
+          ><i class="fa-solid fa-paper-plane text-base"></i
+          ><span>Contact</span></a
+        >
+      </div>
+    </nav>
 
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/typed.js/typed.umd.js"></script>
-  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
+    <!-- AOS + main script -->
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 
-  <!-- Template Main JS File -->
-  <script src="assets/js/main.js"></script>
+    <script>
+      // AOS init
+      AOS.init({ once: true, duration: 600, easing: "ease-out" });
+      const y = document.getElementById("year");
+      if (y) y.textContent = new Date().getFullYear();
 
-</body>
+      // Typed effect (lightweight)
+      const typedEl = document.getElementById("typed");
+      const phrases = [
+        "Backend Developer • Django • DRF",
+        "APIs, Scalability, Reliability",
+        "PostgreSQL • Redis • Docker",
+      ];
+      let pi = 0,
+        ci = 0,
+        deleting = false;
+      function typeLoop() {
+        if (!typedEl) return;
+        const current = phrases[pi];
+        if (!deleting) {
+          typedEl.textContent = current.slice(0, ci++);
+          if (ci > current.length + 8) deleting = true;
+        } else {
+          typedEl.textContent = current.slice(0, ci--);
+          if (ci < 0) {
+            deleting = false;
+            pi = (pi + 1) % phrases.length;
+          }
+        }
+        const speed = deleting ? 40 : 70;
+        setTimeout(typeLoop, speed);
+      }
+      if (typedEl) typeLoop();
 
+      // Subtle parallax: elements with [data-parallax="ratio"]
+      const parallaxEls = [...document.querySelectorAll("[data-parallax]")];
+      let ticking = false;
+      function onScroll() {
+        if (!ticking) {
+          window.requestAnimationFrame(() => {
+            const y = window.scrollY || window.pageYOffset;
+            parallaxEls.forEach((el) => {
+              const ratio = parseFloat(el.getAttribute("data-parallax")) || 0.1;
+              el.style.transform = `translateY(${y * ratio * -1}px)`;
+            });
+            ticking = false;
+          });
+          ticking = true;
+        }
+      }
+      window.addEventListener("scroll", onScroll, { passive: true });
+      onScroll();
+
+      // Keyboard focus outline only when tabbing
+      function handleFirstTab(e) {
+        if (e.key === "Tab") {
+          document.body.classList.add("outline-none");
+          window.removeEventListener("keydown", handleFirstTab);
+        }
+      }
+      window.addEventListener("keydown", handleFirstTab);
+    </script>
+  </body>
 </html>
