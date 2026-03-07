@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -28,16 +28,91 @@
     />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://ezekiel-okebule.github.io" />
+    <meta property="og:locale" content="en_US" />
     <meta
       property="twitter:image"
       content="https://ezekiel-okebule.vercel.app/assets/img/og-image.jpg"
     />
     <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:title" content="Ezekiel Okebule" />
+    <meta property="twitter:title" content="Ezekiel Okebule - Software Engineer" />
     <meta
       property="twitter:description"
-      content="Ezekiel Okebule - Software Engineer. Frontend, React Native, Backend APIs, Django, TypeScript."
+      content="Ezekiel Okebule - Software Engineer specializing in Django API development, React Native mobile apps, and fullstack solutions."
     />
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Ezekiel Okebule",
+      "jobTitle": "Software Engineer",
+      "description": "Fullstack developer specializing in Django API development, React Native mobile apps, backend services, and scalable web applications.",
+      "url": "https://ezekiel-okebule.github.io",
+      "image": "https://ezekiel-okebule.vercel.app/assets/img/og-image.jpg",
+      "sameAs": [
+        "https://github.com/carnage999-max",
+        "https://linkedin.com/ezekiel-okebule",
+        "https://X.com/Ezekiel11011"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Lagos",
+        "addressCountry": "Nigeria"
+      },
+      "email": "jamesezekiel039@gmail.com",
+      "telephone": "+2349159167551",
+      "knowsAbout": [
+        "Django API development",
+        "React Native mobile apps",
+        "Python backend development",
+        "TypeScript",
+        "PostgreSQL",
+        "Next.js",
+        "AWS cloud services",
+        "Payment integrations"
+      ],
+      "hasOccupation": {
+        "@type": "Occupation",
+        "name": "Software Engineer",
+        "occupationLocation": {
+          "@type": "City",
+          "name": "Lagos",
+          "addressCountry": "NG"
+        }
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://ezekiel-okebule.github.io"
+      },
+      "hasPart": [
+        {
+          "@type": "CreativeWork",
+          "name": "StudentPay Platform",
+          "description": "Payment processing platform for university students using Django REST Framework and Next.js.",
+          "url": "https://student-pay.sevalla.app/"
+        },
+        {
+          "@type": "CreativeWork",
+          "name": "Fractional - Hedera Hackathon",
+          "description": "Web3 platform for NFT fractionalization using Hedera smart contracts.",
+          "url": "https://fractional-three.vercel.app"
+        },
+        {
+          "@type": "CreativeWork",
+          "name": "Liberty Social",
+          "description": "Modern social network with marketplace and real-time features using DRF and Next.js."
+        },
+        {
+          "@type": "CreativeWork",
+          "name": "CSVByte - CSV Utility API",
+          "description": "Microservice for CSV file processing using Django REST Framework."
+        }
+      ]
+    }
+    </script>
 
     <!-- Favicons -->
     <link href="assets/img/favicon.png" rel="icon" />
@@ -164,7 +239,7 @@
 
       /* mobile bottom nav */
       .mobile-nav {
-        env(safe-area-inset-bottom);
+        padding-bottom: env(safe-area-inset-bottom);
       }
       .backdrop-blur-md {
         -webkit-backdrop-filter: blur(12px);
@@ -188,6 +263,43 @@
       [data-parallax] {
         transition: transform 0.12s linear;
       }
+
+      /* Skeleton loader for GitHub stats */
+      .skeleton {
+        background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+        background-size: 200% 100%;
+        animation: loading 1.5s infinite;
+      }
+      @keyframes loading {
+        0% {
+          background-position: 200% 0;
+        }
+        100% {
+          background-position: -200% 0;
+        }
+      }
+      .skeleton-img {
+        position: relative;
+        overflow: hidden;
+      }
+      .skeleton-img::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+        animation: shimmer 1.5s infinite;
+      }
+      @keyframes shimmer {
+        0% {
+          transform: translateX(-100%);
+        }
+        100% {
+          transform: translateX(100%);
+        }
+      }
     </style>
   </head>
 
@@ -206,7 +318,7 @@
         />
         <h1 class="mt-4 text-2xl font-bold text-white">Ezekiel Okebule</h1>
         <p class="text-sm text-gray-400 mt-1">
-          Software Engineer • React Native • Full-stack
+          Software Engineer • React Native • Django • TypeScript
         </p>
 
         <div class="mt-5 w-full">
@@ -231,11 +343,15 @@
               class="block px-3 py-2 rounded hover:bg-gray-800 flex items-center gap-2 tap-target"
               ><i class="fa-solid fa-file-lines"></i> Resume</a
             >
-            <!-- briefcase for Projects -->
             <a
               href="#projects"
               class="block px-3 py-2 rounded hover:bg-gray-800 flex items-center gap-2 tap-target"
               ><i class="fa-solid fa-briefcase"></i> Projects</a
+            >
+            <a
+              href="#blog"
+              class="block px-3 py-2 rounded hover:bg-gray-800 flex items-center gap-2 tap-target"
+              ><i class="fa-solid fa-blog"></i> Blog</a
             >
             <a
               href="#contact"
@@ -257,9 +373,9 @@
           <div>© <span id="year"></span> Ezekiel Okebule</div>
           <div class="mt-3 flex gap-3 justify-center">
             <a
-              href="https://twitter.com/Ezekiel11011"
+              href="https://X.com/Ezekiel11011"
               target="_blank"
-              aria-label="Twitter"
+              aria-label="X"
               class="hover:text-primary text-gray-300"
               ><i class="fa-brands fa-x-twitter text-lg"></i
             ></a>
@@ -317,7 +433,8 @@
               </h2>
 
               <p class="mt-3 text-gray-300 max-w-2xl">
-                Software Engineer building beautiful frontends, powerful APIs, and mobile apps with React Native.
+                Software Engineer building beautiful frontends, powerful APIs,
+                and mobile apps with React Native.
               </p>
 
               <div class="mt-6 flex flex-wrap gap-3">
@@ -362,8 +479,10 @@
               <h3 class="text-2xl font-semibold">About</h3>
               <p class="mt-3 text-gray-300">
                 I build production-ready APIs and backend services, focusing on
-                reliability and maintainability. Recent work includes StudentPay
-                — a hosted fullstack MVP for university payments.
+                reliability and maintainability. Recent work includes
+                NoLimitFlix - A Movie streaming library and mood
+                picker, StudentPay - a hosted fullstack MVP for university
+                payments.
               </p>
 
               <div class="mt-6 space-y-2 text-sm text-gray-400">
@@ -391,9 +510,9 @@
                 <div class="p-4 rounded-xl bg-gray-800/60 ring-1 ring-gray-800">
                   <div class="text-sm text-gray-400">Experience</div>
                   <div class="mt-2 font-semibold text-white">
-                    Backend Developer @ Goufer PLC
+                    Backend Developer @ Gig-Gap
                   </div>
-                  <div class="text-xs text-gray-400">May 2024 - Nov 2024</div>
+                  <div class="text-xs text-gray-400">January 2026 - Present</div>
                 </div>
                 <div class="p-4 rounded-xl bg-gray-800/60 ring-1 ring-gray-800">
                   <div class="text-sm text-gray-400">Education</div>
@@ -555,8 +674,6 @@
                 </div>
               </div>
             </div>
-
-
           </div>
         </section>
 
@@ -602,9 +719,7 @@
                 <h4 class="text-lg font-semibold mt-6 mb-3">Education</h4>
                 <div class="p-4 rounded-xl bg-gray-800/50 ring-1 ring-gray-800">
                   <h5 class="font-semibold">BSc. Computer Science</h5>
-                  <div class="text-sm text-gray-400">
-                    2021 - 2025
-                  </div>
+                  <div class="text-sm text-gray-400">2021 - 2025</div>
                   <div class="text-sm text-gray-300 mt-1">
                     Grade: 4.44/5.0 • Second Class Upper Division
                   </div>
@@ -612,7 +727,10 @@
                     Olabisi Onabanjo University, Ago-Iwoye, Ogun State, Nigeria
                   </p>
                   <p class="mt-2 text-sm text-gray-300">
-                    <strong>Final Year Project</strong>: Accreditation management system (Django + PostgreSQL) featuring dashboards, scoring automation, compliance tracking, and document analytics.
+                    <strong>Final Year Project</strong>: Accreditation
+                    management system (Django + PostgreSQL) featuring
+                    dashboards, scoring automation, compliance tracking, and
+                    document analytics.
                   </p>
                 </div>
               </div>
@@ -629,19 +747,22 @@
                       Software Engineer — Ultimate Mobile Apps
                     </h5>
                     <div class="text-sm text-gray-400">
-                      August 2025 - November 2025 • Maine, USA (Remote)
+                      August 2025 - Present • Maine, USA (Remote)
                     </div>
                     <ul
                       class="mt-3 text-sm text-gray-300 list-disc list-inside"
                     >
                       <li>
-                        Delivered 9+ full-stack applications (frontend + backend) as part of a 22-project suite.
+                        Delivered 20+ full-stack applications (frontend +
+                        backend) as part of a 80-project suite.
                       </li>
                       <li>
-                        Built Liberty Social, a next-gen social media platform with marketplace, real-time chat, and notifications.
+                        Built Liberty Social, a next-gen social media platform
+                        with marketplace, real-time chat, and notifications.
                       </li>
                       <li>
-                        Strengthened cloud workflows using AWS App Runner, ECS, Amplify, and ELB for deployments.
+                        Strengthened cloud workflows using AWS App Runner, ECS,
+                        Amplify, and ELB for deployments.
                       </li>
                     </ul>
                   </div>
@@ -650,9 +771,7 @@
                   <div
                     class="p-4 rounded-xl bg-gray-800/50 ring-1 ring-gray-800"
                   >
-                    <h5 class="font-semibold">
-                      Backend Developer — Gig-gap
-                    </h5>
+                    <h5 class="font-semibold">Backend Developer — Gig-gap</h5>
                     <div class="text-sm text-gray-400">
                       January 2026 - Present • Remote
                     </div>
@@ -660,7 +779,8 @@
                       class="mt-3 text-sm text-gray-300 list-disc list-inside"
                     >
                       <li>
-                        Building backend systems using Django and Django REST Framework.
+                        Building backend systems using Django and Django REST
+                        Framework.
                       </li>
                       <li>
                         Managing cloud infrastructure with Terraform on AWS.
@@ -684,11 +804,10 @@
                       <li>
                         Built 15+ API endpoints serving 1,000+ daily users.
                       </li>
+                      <li>Created real-time chat using Django Channels.</li>
                       <li>
-                        Created real-time chat using Django Channels.
-                      </li>
-                      <li>
-                        Integrated Twilio for phone verification (reduced fake signups by 40%).
+                        Integrated Twilio for phone verification (reduced fake
+                        signups by 40%).
                       </li>
                       <li>
                         Improved API performance by 35% via query optimization.
@@ -700,9 +819,7 @@
                   <div
                     class="p-4 rounded-xl bg-gray-800/50 ring-1 ring-gray-800"
                   >
-                    <h5 class="font-semibold">
-                      Freelance Developer @ Upwork
-                    </h5>
+                    <h5 class="font-semibold">Freelance Developer @ Upwork</h5>
                     <div class="text-sm text-gray-400">
                       2021 - Present • Remote
                     </div>
@@ -710,10 +827,12 @@
                       class="mt-3 text-sm text-gray-300 list-disc list-inside"
                     >
                       <li>
-                        Delivered 12+ projects for fintech, e-commerce, and education startups.
+                        Delivered 12+ projects for fintech, e-commerce, and
+                        education startups.
                       </li>
                       <li>
-                        Built high-reliability payment systems with Paystack, Stripe, Flutterwave, and Monnify.
+                        Built high-reliability payment systems with Paystack,
+                        Stripe, Flutterwave, and Monnify.
                       </li>
                     </ul>
                   </div>
@@ -756,7 +875,9 @@
                     ></i>
                   </div>
                   <p class="text-sm text-gray-300 mt-2">
-                    <strong>Technologies:</strong> Django REST Framework, Next.js, Tailwind CSS, PostgreSQL, Redis, Paystack, Monnify, Supabase
+                    <strong>Technologies:</strong> Django REST Framework,
+                    Next.js, Tailwind CSS, PostgreSQL, Redis, Paystack, Monnify,
+                    Supabase
                   </p>
                   <p class="mt-2 text-sm text-gray-300">
                     <a
@@ -765,17 +886,20 @@
                       class="text-primary"
                       >Live demo</a
                     >
-                    — Payment processing platform handling 2,000+ students with automated reconciliation (99.8% accuracy).
+                    — Payment processing platform handling 2,000+ students with
+                    automated reconciliation (99.8% accuracy). Built with Django REST Framework for robust API development and Next.js for modern frontend interfaces.
                   </p>
                   <ul class="mt-3 text-sm text-gray-400 list-disc list-inside">
                     <li>
                       Integrated Paystack + Monnify with webhook verification.
                     </li>
                     <li>
-                      Achieved &lt;200ms API response times via PostgreSQL + Redis optimization.
+                      Achieved &lt;200ms API response times via PostgreSQL +
+                      Redis optimization.
                     </li>
                     <li>
-                      Reduced manual payment processing time by 80% for university administration.
+                      Reduced manual payment processing time by 80% for
+                      university administration.
                     </li>
                   </ul>
                   <div class="mt-3 flex gap-2">
@@ -795,20 +919,28 @@
                 >
                   <div class="flex items-center justify-between">
                     <h5 class="font-semibold">Fractional - Hedera Hackathon</h5>
-                    <i
-                      class="spark fa-solid fa-chart-pie text-primary/80"
-                    ></i>
+                    <i class="spark fa-solid fa-chart-pie text-primary/80"></i>
                   </div>
                   <p class="text-sm text-gray-300 mt-2">
-                    <strong>Technologies:</strong> Hedera, Next.js, Smart Contracts, Node.js
+                    <strong>Technologies:</strong> Hedera, Next.js, Smart
+                    Contracts, Node.js
                   </p>
                   <p class="mt-2 text-sm text-gray-300">
-                    End-to-end Web3 platform where creators mint NFTs, issue fractional FT shares, and distribute dividends.
+                    End-to-end Web3 platform where creators mint NFTs, issue
+                    fractional FT shares, and distribute dividends. Leveraging Hedera smart contracts for secure blockchain development and Next.js for responsive user interfaces.
                   </p>
                   <ul class="mt-3 text-sm text-gray-400 list-disc list-inside">
-                    <li>Implements tokens association, on-chain rewards, and wallet-based payouts.</li>
                     <li>
-                      <a href="https://fractional-three.vercel.app" target="_blank" class="text-primary">Live Demo</a>
+                      Implements tokens association, on-chain rewards, and
+                      wallet-based payouts.
+                    </li>
+                    <li>
+                      <a
+                        href="https://fractional-three.vercel.app"
+                        target="_blank"
+                        class="text-primary"
+                        >Live Demo</a
+                      >
                     </li>
                   </ul>
                   <div class="mt-3 flex gap-2">
@@ -833,14 +965,21 @@
                     ></i>
                   </div>
                   <p class="text-sm text-gray-300 mt-2">
-                    <strong>Technologies:</strong> DRF, Next.js, AWS, PostgreSQL, Celery, Redis, Firebase
+                    <strong>Technologies:</strong> DRF, Next.js, AWS,
+                    PostgreSQL, Celery, Redis, Firebase
                   </p>
                   <p class="mt-2 text-sm text-gray-300">
-                    A modern social network built to fix Facebook's clutter and privacy issues. Features marketplace, posts, comments, real-time chat, media uploads, notifications, and business pages.
+                    A modern social network built to fix Facebook's clutter and
+                    privacy issues. Features marketplace, posts, comments,
+                    real-time chat, media uploads, notifications, and business
+                    pages. Developed with Django REST Framework for scalable backend APIs and Next.js for dynamic frontend experiences.
                   </p>
                   <ul class="mt-3 text-sm text-gray-400 list-disc list-inside">
                     <li>Fully deployed on AWS (App Runner + Amplify).</li>
-                    <li>Implemented complex UI flows with focus on speed and UX clarity.</li>
+                    <li>
+                      Implemented complex UI flows with focus on speed and UX
+                      clarity.
+                    </li>
                   </ul>
                 </article>
 
@@ -855,10 +994,12 @@
                     ></i>
                   </div>
                   <p class="text-sm text-gray-300 mt-2">
-                    <strong>Technologies:</strong> Django REST Framework, Supabase, Celery, PostgreSQL
+                    <strong>Technologies:</strong> Django REST Framework,
+                    Supabase, Celery, PostgreSQL
                   </p>
                   <p class="mt-2 text-sm text-gray-300">
-                    Microservice API for uploading, splitting, and compressing large CSV files.
+                    Microservice API for uploading, splitting, and compressing
+                    large CSV files. Built with Django REST Framework for efficient file processing and background job management using Celery.
                   </p>
                   <ul class="mt-3 text-sm text-gray-400 list-disc list-inside">
                     <li>CSV upload → chunking → zipping → Supabase storage.</li>
@@ -885,24 +1026,83 @@
                 <img
                   src="https://github-readme-stats.vercel.app/api?username=Carnage999-max&theme=dark&hide_border=false&include_all_commits=true&count_private=true"
                   alt="GitHub stats for Carnage999-max"
-                  class="w-full rounded-xl shadow-md"
+                  class="w-full rounded-xl shadow-md skeleton-img"
                   loading="lazy"
+                  onload="this.classList.remove('skeleton-img')"
                 />
                 <!-- Streak -->
                 <img
                   src="https://nirzak-streak-stats.vercel.app/?user=Carnage999-max&theme=dark&hide_border=false"
                   alt="GitHub streak stats for Carnage999-max"
-                  class="w-full rounded-xl shadow-md"
+                  class="w-full rounded-xl shadow-md skeleton-img"
                   loading="lazy"
+                  onload="this.classList.remove('skeleton-img')"
                 />
                 <!-- Top languages (compact) -->
                 <img
                   src="https://github-readme-stats.vercel.app/api/top-langs/?username=Carnage999-max&theme=dark&hide_border=false&include_all_commits=true&count_private=true&layout=compact"
                   alt="Top languages for Carnage999-max"
-                  class="w-full rounded-xl shadow-md"
+                  class="w-full rounded-xl shadow-md skeleton-img"
                   loading="lazy"
+                  onload="this.classList.remove('skeleton-img')"
                 />
               </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- BLOG / CASE STUDIES -->
+        <section id="blog" class="p-8 lg:p-16 bg-gradient-to-b from-transparent to-gray-900/10" data-aos="fade-up">
+          <div class="max-w-4xl mx-auto">
+            <h3 class="text-2xl font-semibold">Blog & Case Studies</h3>
+            <p class="text-gray-400 mt-2">
+              Insights on Django API development, React Native mobile apps, and fullstack engineering best practices.
+            </p>
+
+            <div class="mt-6 grid md:grid-cols-2 gap-6">
+              <article class="p-5 rounded-xl bg-gray-800/50 ring-1 ring-gray-800 group">
+                <h4 class="font-semibold text-lg">Building Scalable APIs with Django REST Framework</h4>
+                <p class="text-sm text-gray-300 mt-2">
+                  Learn how to design and implement robust APIs using Django, including authentication, serialization, and performance optimization techniques.
+                </p>
+                <div class="mt-3 flex items-center justify-between">
+                  <span class="text-xs text-gray-400">March 2026</span>
+                  <a href="#" class="text-primary hover:underline text-sm">Read More →</a>
+                </div>
+              </article>
+
+              <article class="p-5 rounded-xl bg-gray-800/50 ring-1 ring-gray-800 group">
+                <h4 class="font-semibold text-lg">React Native Mobile App Development Case Study</h4>
+                <p class="text-sm text-gray-300 mt-2">
+                  A deep dive into developing cross-platform mobile applications with React Native, covering state management, navigation, and deployment.
+                </p>
+                <div class="mt-3 flex items-center justify-between">
+                  <span class="text-xs text-gray-400">February 2026</span>
+                  <a href="#" class="text-primary hover:underline text-sm">Read More →</a>
+                </div>
+              </article>
+
+              <article class="p-5 rounded-xl bg-gray-800/50 ring-1 ring-gray-800 group">
+                <h4 class="font-semibold text-lg">Optimizing Database Queries in PostgreSQL</h4>
+                <p class="text-sm text-gray-300 mt-2">
+                  Best practices for writing efficient database queries, indexing strategies, and monitoring performance in PostgreSQL-backed applications.
+                </p>
+                <div class="mt-3 flex items-center justify-between">
+                  <span class="text-xs text-gray-400">January 2026</span>
+                  <a href="#" class="text-primary hover:underline text-sm">Read More →</a>
+                </div>
+              </article>
+
+              <article class="p-5 rounded-xl bg-gray-800/50 ring-1 ring-gray-800 group">
+                <h4 class="font-semibold text-lg">Integrating Payment Systems in Web Applications</h4>
+                <p class="text-sm text-gray-300 mt-2">
+                  Step-by-step guide to integrating payment gateways like Paystack and Stripe into Django applications with webhook handling.
+                </p>
+                <div class="mt-3 flex items-center justify-between">
+                  <span class="text-xs text-gray-400">December 2025</span>
+                  <a href="#" class="text-primary hover:underline text-sm">Read More →</a>
+                </div>
+              </article>
             </div>
           </div>
         </section>
@@ -941,9 +1141,7 @@
           </div>
         </section>
 
-        <footer class="p-6 text-center text-gray-500">
-          11011
-        </footer>
+        <footer class="p-6 text-center text-gray-500">11011</footer>
       </main>
     </div>
 
@@ -974,6 +1172,11 @@
           class="flex flex-col items-center py-2 tap-target text-gray-300"
           ><i class="fa-solid fa-briefcase text-base"></i
           ><span>Projects</span></a
+        >
+        <a
+          href="#blog"
+          class="flex flex-col items-center py-2 tap-target text-gray-300"
+          ><i class="fa-solid fa-blog text-base"></i><span>Blog</span></a
         >
         <a
           href="#contact"
