@@ -3,42 +3,55 @@
   <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Ezekiel Okebule - Software Engineer & Founder</title>
+    <title>Ezekiel Okebule — Full-Stack Engineer | Django, Python, AWS</title>
+    <link rel="canonical" href="https://ezekiel-okebule.github.io/" />
     <meta
       name="description"
-      content="Ezekiel Okebule - Software Engineer & Founder. Backend APIs, React Native mobile apps, Django, TypeScript. Creator of NoLimitFlix and OyaChop."
+      content="Ezekiel Okebule — full-stack engineer with 4+ years shipping production systems in Python/Django, React/Next.js and cloud infrastructure on AWS and GCP. Builder of NoLimitFlix, Liberty Social and StudentPay."
     />
     <meta
       name="keywords"
-      content="Developer software engineer frontend react native fullstack coder Nigeria Lagos"
+      content="full-stack engineer, backend developer, Python, Django, Django REST Framework, Next.js, React Native, TypeScript, AWS, GCP, Terraform, Docker, PostgreSQL, Nigeria, Lagos, remote"
     />
     <meta name="creator" content="Ezekiel Okebule(11011)" />
     <meta name="publisher" content="11011" />
     <meta name="author" content="Ezekiel Okebule" />
+    <meta name="theme-color" content="#111827" />
     <link rel="author" href="https://github.com/carnage999-max" />
     <meta property="og:site_name" content="Ezekiel Okebule" />
-    <meta property="og:title" content="Ezekiel Okebule" />
-    <meta property="og:image" content="https://ezekiel-okebule.vercel.app/assets/img/og-image.jpg" />
-    <meta property="og:description" content="Ezekiel Okebule - Software Engineer & Founder. Backend APIs, React Native, Django, TypeScript." />
+    <meta property="og:title" content="Ezekiel Okebule — Full-Stack Engineer" />
+    <meta property="og:image" content="https://ezekiel-okebule.github.io/assets/img/og-image.jpg" />
+    <meta property="og:image:alt" content="Ezekiel Okebule — Full-Stack Engineer, Backend, Python" />
+    <meta property="og:description" content="Full-stack engineer shipping production APIs, cloud infrastructure and mobile apps — Django, Next.js, AWS and GCP." />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://ezekiel-okebule.vercel.app" />
+    <meta property="og:url" content="https://ezekiel-okebule.github.io/" />
     <meta property="og:locale" content="en_US" />
-    <meta property="twitter:image" content="https://ezekiel-okebule.vercel.app/assets/img/og-image.jpg" />
+    <meta property="twitter:image" content="https://ezekiel-okebule.github.io/assets/img/og-image.jpg" />
     <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:title" content="Ezekiel Okebule - Software Engineer & Founder" />
-    <meta property="twitter:description" content="Ezekiel Okebule - Software Engineer & Founder. Django APIs, React Native mobile apps, fullstack solutions." />
+    <meta property="twitter:title" content="Ezekiel Okebule — Full-Stack Engineer" />
+    <meta property="twitter:description" content="Production APIs, cloud infrastructure and shipped mobile apps — Django, Next.js, AWS and GCP." />
 
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Person",
       "name": "Ezekiel Okebule",
-      "jobTitle": "Software Engineer & Founder",
-      "description": "Fullstack developer and founder specializing in Django API development, React Native mobile apps, backend services, and scalable web applications. Creator of NoLimitFlix and OyaChop.",
-      "url": "https://ezekiel-okebule.vercel.app",
-      "image": "https://ezekiel-okebule.vercel.app/assets/img/og-image.jpg",
+      "jobTitle": "Full-Stack Engineer",
+      "description": "Full-stack engineer with 4+ years shipping production systems in Python/Django, React/Next.js and cloud infrastructure across AWS and GCP. Experience spans fintech, logistics, social networking and streaming.",
+      "url": "https://ezekiel-okebule.github.io/",
+      "image": "https://ezekiel-okebule.github.io/assets/img/og-image.jpg",
+      "knowsAbout": [
+        "Python", "Django", "Django REST Framework", "PostgreSQL", "Redis", "Celery",
+        "Next.js", "React", "React Native", "TypeScript", "Tailwind CSS",
+        "AWS", "Google Cloud Platform", "Terraform", "Docker", "CI/CD",
+        "REST API design", "WebSockets", "Payment gateway integration", "LLM integration"
+      ],
+      "alumniOf": {
+        "@type": "CollegeOrUniversity",
+        "name": "Olabisi Onabanjo University"
+      },
       "sameAs": [
         "https://github.com/carnage999-max",
         "https://linkedin.com/in/ezekiel-okebule",
@@ -49,8 +62,7 @@
         "addressLocality": "Lagos",
         "addressCountry": "Nigeria"
       },
-      "email": "jamesezekiel039@gmail.com",
-      "telephone": "+2349159167551"
+      "email": "jamesezekiel039@gmail.com"
     }
     </script>
 
@@ -92,10 +104,12 @@
       #typed {
         display: inline-block;
         min-width: 22ch;
+        max-width: 100%;
         min-height: 1.45rem;
         vertical-align: middle;
-        overflow: hidden;
         position: relative;
+        white-space: normal;
+        overflow-wrap: anywhere;
       }
       #typed.caret::after {
         content: "";
@@ -134,6 +148,10 @@
       .animate-pulse { animation: pulse-fast 1s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
 
       .mobile-nav { padding-bottom: env(safe-area-inset-bottom); }
+      /* Keep the footer clear of the fixed mobile bottom nav */
+      @media (max-width: 1023.98px) {
+        body { padding-bottom: calc(5.5rem + env(safe-area-inset-bottom)); }
+      }
       .backdrop-blur-md {
         -webkit-backdrop-filter: blur(12px);
         backdrop-filter: blur(12px);
@@ -145,6 +163,25 @@
       }
 
       [data-parallax] { transition: transform 0.12s linear; }
+
+      /* AOS hides every section (opacity:0) until it animates them in. If JS is
+         disabled, the AOS CDN is blocked, or the script errors, the whole page
+         would render blank. `.no-aos` on <html> is the escape hatch: it is set
+         by the <noscript> below and by the failsafes in the footer script.
+         AOS's own rules are [data-aos^=fade][data-aos^=fade] (specificity 0,2,0),
+         so these need !important to win. */
+      html.no-aos [data-aos] {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+      }
+      @media (prefers-reduced-motion: reduce) {
+        [data-aos] {
+          opacity: 1 !important;
+          transform: none !important;
+          transition: none !important;
+        }
+      }
 
       .skeleton-img {
         position: relative;
@@ -218,6 +255,12 @@
         margin: 0 2rem;
       }
     </style>
+
+    <noscript>
+      <style>
+        [data-aos] { opacity: 1 !important; transform: none !important; }
+      </style>
+    </noscript>
     <meta name="google-site-verification" content="UmP41GHfI2FTFIYRAQRS26KHJYZ0AfG90-p7m0dGg3E" />
   </head>
 
@@ -226,15 +269,19 @@
     <div class="min-h-screen flex">
       <!-- LEFT SIDEBAR -->
       <aside class="w-80 bg-gray-900/60 backdrop-blur-lg border-r border-gray-800 sticky top-0 h-screen p-6 hidden lg:flex flex-col items-center">
-        <img
-          src="assets/img/img.jpg"
-          alt="Ezekiel"
-          class="w-40 h-44 object-cover rounded-xl shadow-xl ring-2 ring-gray-800"
-        />
-        <h1 class="mt-4 text-2xl font-bold text-white">Ezekiel Okebule</h1>
+        <picture>
+          <source srcset="assets/img/profile.webp 1x, assets/img/profile@2x.webp 2x" type="image/webp" />
+          <img
+            src="assets/img/profile.jpg"
+            alt="Portrait of Ezekiel Okebule"
+            width="400" height="440"
+            class="w-40 h-44 object-cover rounded-xl shadow-xl ring-2 ring-gray-800"
+          />
+        </picture>
+        <div class="mt-4 text-2xl font-bold text-white">Ezekiel Okebule</div>
         <p class="text-sm text-gray-400 mt-1 text-center">
-          Software Engineer &amp; Founder<br/>
-          <span class="text-xs">Django • React Native • TypeScript</span>
+          Full-Stack Engineer &amp; Founder<br/>
+          <span class="text-xs">Python • Django • Next.js • AWS</span>
         </p>
 
 
@@ -261,7 +308,7 @@
 
             <a
               href="https://flowcv.com/resume/2s4i81su44c2"
-              target="_blank"
+              target="_blank" rel="noopener noreferrer"
               class="block mt-3 text-center px-4 py-2 bg-primary rounded text-black font-semibold flex items-center justify-center gap-2 tap-target"
             >
               <i class="fa-solid fa-download"></i> View Resume
@@ -272,13 +319,13 @@
         <div class="mt-auto text-xs text-gray-500 text-center">
           <div>© <span id="year"></span> Ezekiel Okebule</div>
           <div class="mt-3 flex gap-3 justify-center">
-            <a href="https://X.com/Ezekiel11011" target="_blank" aria-label="X" class="hover:text-primary text-gray-300">
+            <a href="https://X.com/Ezekiel11011" target="_blank" rel="noopener noreferrer" aria-label="X" class="hover:text-primary text-gray-300">
               <i class="fa-brands fa-x-twitter text-lg"></i>
             </a>
-            <a href="https://github.com/carnage999-max" target="_blank" aria-label="GitHub" class="hover:text-primary text-gray-300">
+            <a href="https://github.com/carnage999-max" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="hover:text-primary text-gray-300">
               <i class="fa-brands fa-github text-lg"></i>
             </a>
-            <a href="https://linkedin.com/in/ezekiel-okebule" target="_blank" aria-label="LinkedIn" class="hover:text-primary text-gray-300">
+            <a href="https://linkedin.com/in/ezekiel-okebule" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="hover:text-primary text-gray-300">
               <i class="fa-brands fa-linkedin text-lg"></i>
             </a>
           </div>
@@ -286,7 +333,29 @@
       </aside>
 
       <!-- RIGHT CONTENT -->
-      <main class="flex-1">
+      <main class="flex-1 min-w-0">
+
+        <!-- MOBILE IDENTITY HEADER (the sidebar is desktop-only) -->
+        <div class="lg:hidden flex items-center gap-4 px-8 pt-8">
+          <picture>
+            <source srcset="assets/img/profile.webp 1x, assets/img/profile@2x.webp 2x" type="image/webp" />
+            <img
+              src="assets/img/profile.jpg"
+              alt="Portrait of Ezekiel Okebule"
+              width="400" height="440"
+              class="w-16 h-[4.4rem] object-cover rounded-lg ring-2 ring-gray-800 shrink-0"
+            />
+          </picture>
+          <div class="min-w-0">
+            <div class="text-lg font-bold text-white leading-tight">Ezekiel Okebule</div>
+            <div class="text-xs text-gray-400 mt-0.5">Full-Stack Engineer &amp; Founder</div>
+            <div class="mt-2 flex gap-3">
+              <a href="https://github.com/carnage999-max" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="text-gray-300 hover:text-primary"><i class="fa-brands fa-github"></i></a>
+              <a href="https://linkedin.com/in/ezekiel-okebule" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="text-gray-300 hover:text-primary"><i class="fa-brands fa-linkedin"></i></a>
+              <a href="https://X.com/Ezekiel11011" target="_blank" rel="noopener noreferrer" aria-label="X" class="text-gray-300 hover:text-primary"><i class="fa-brands fa-x-twitter"></i></a>
+            </div>
+          </div>
+        </div>
 
         <!-- HERO -->
         <section id="hero" class="relative min-h-[55vh] flex items-center p-8 lg:p-16 overflow-hidden">
@@ -297,22 +366,22 @@
 
           <div class="max-w-4xl mx-auto w-full will-change-transform" data-parallax="0.05">
             <div class="rounded-2xl bg-gradient-to-b from-gray-800/70 to-transparent p-6 md:p-8 ring-1 ring-gray-800" data-aos="fade-up">
-              <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight">
-                Hi, I'm <span class="text-white">Ezekiel</span> 👋
-              </h2>
+              <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight">
+                Hi, I'm <span class="text-white">Ezekiel Okebule</span> 👋
+              </h1>
 
               <p class="mt-3 text-gray-300 max-w-2xl">
-                Software Engineer &amp; Founder. I build production-grade APIs, mobile apps, and ship real products — from backend services to apps live on the App Store and Play Store.
+                Full-stack engineer with 4+ years shipping production systems in Python/Django, React/Next.js and cloud infrastructure across AWS and GCP — from backend architecture through to apps live on the App Store and Play Store.
               </p>
 
               <div class="mt-6 flex flex-wrap gap-3">
-                <a href="https://github.com/carnage999-max" target="_blank" class="px-4 py-2 rounded bg-gray-800 hover:bg-gray-700 inline-flex items-center gap-2 tap-target">
+                <a href="https://github.com/carnage999-max" target="_blank" rel="noopener noreferrer" class="px-4 py-2 rounded bg-gray-800 hover:bg-gray-700 inline-flex items-center gap-2 tap-target">
                   <i class="fa-brands fa-github"></i> GitHub
                 </a>
-                <a href="https://linkedin.com/in/ezekiel-okebule" target="_blank" class="px-4 py-2 rounded bg-gray-800 hover:bg-gray-700 inline-flex items-center gap-2 tap-target">
+                <a href="https://linkedin.com/in/ezekiel-okebule" target="_blank" rel="noopener noreferrer" class="px-4 py-2 rounded bg-gray-800 hover:bg-gray-700 inline-flex items-center gap-2 tap-target">
                   <i class="fa-brands fa-linkedin"></i> LinkedIn
                 </a>
-                <a href="https://flowcv.com/resume/2s4i81su44c2" target="_blank" class="px-4 py-2 rounded bg-primary text-black font-semibold inline-flex items-center gap-2 tap-target">
+                <a href="https://flowcv.com/resume/2s4i81su44c2" target="_blank" rel="noopener noreferrer" class="px-4 py-2 rounded bg-primary text-black font-semibold inline-flex items-center gap-2 tap-target">
                   <i class="fa-solid fa-file"></i> View Resume
                 </a>
               </div>
@@ -330,12 +399,12 @@
         <section id="about" class="p-8 lg:p-16" data-aos="fade-up">
           <div class="max-w-4xl mx-auto grid lg:grid-cols-3 gap-8 items-start">
             <div class="lg:col-span-1">
-              <h3 class="text-2xl font-semibold">About</h3>
+              <h2 class="text-2xl font-semibold">About</h2>
               <p class="mt-3 text-gray-300 text-sm leading-relaxed">
-                I'm a backend-first engineer who ships full products. I've built and launched apps live on the App Store and Play Store, led backend architecture for social platforms serving real users, and delivered production applications for US-based clients across multiple industries.
+                I'm a backend-first engineer who ships full products. Over 4+ years I've delivered across fintech, logistics, social networking and streaming — launching apps live on the App Store and Play Store, leading backend architecture for social platforms serving real users, and building production applications for US-based clients.
               </p>
               <p class="mt-3 text-gray-400 text-sm leading-relaxed">
-                I'm equally comfortable writing a Django API, architecting AWS infrastructure, or taking a product from zero to launch. I'm also currently building a startup in the Nigerian delivery space.
+                I'm equally comfortable writing a Django API, provisioning cloud infrastructure with Terraform on AWS or GCP, or taking a product from zero to launch. I'm also currently building a startup in the Nigerian delivery space.
               </p>
 
               <div class="mt-6 space-y-2 text-sm text-gray-400">
@@ -389,57 +458,81 @@
         <!-- SKILLS -->
         <section id="skills" class="p-8 lg:p-16 bg-gradient-to-b from-transparent to-gray-900/10" data-aos="fade-up">
           <div class="max-w-4xl mx-auto">
-            <h3 class="text-2xl font-semibold">Skills</h3>
+            <h2 class="text-2xl font-semibold">Skills</h2>
             <p class="text-gray-400 mt-2">Technologies and tools I use frequently.</p>
 
             <div class="mt-4 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
               <div class="p-4 rounded-xl bg-gray-800/50 ring-1 ring-gray-800 flex items-center gap-3">
-                <i class="devicon-django-plain colored text-2xl"></i>
-                <div><div class="font-semibold">Django</div><div class="text-xs text-gray-400">APIs, authentication</div></div>
+                <i class="devicon-python-plain colored text-2xl shrink-0" aria-hidden="true"></i>
+                <div class="min-w-0"><div class="font-semibold">Python</div><div class="text-xs text-gray-400">Backend logic &amp; tooling</div></div>
               </div>
               <div class="p-4 rounded-xl bg-gray-800/50 ring-1 ring-gray-800 flex items-center gap-3">
-                <i class="devicon-python-plain colored text-2xl"></i>
-                <div><div class="font-semibold">Python</div><div class="text-xs text-gray-400">Scripting & backend logic</div></div>
+                <i class="devicon-django-plain colored text-2xl shrink-0" aria-hidden="true"></i>
+                <div class="min-w-0"><div class="font-semibold">Django / DRF</div><div class="text-xs text-gray-400">REST APIs, auth, ORM</div></div>
               </div>
               <div class="p-4 rounded-xl bg-gray-800/50 ring-1 ring-gray-800 flex items-center gap-3">
-                <i class="devicon-react-original colored text-2xl"></i>
-                <div><div class="font-semibold">React Native</div><div class="text-xs text-gray-400">iOS & Android apps</div></div>
+                <i class="devicon-postgresql-plain colored text-2xl shrink-0" aria-hidden="true"></i>
+                <div class="min-w-0"><div class="font-semibold">PostgreSQL</div><div class="text-xs text-gray-400">Schema design &amp; query tuning</div></div>
               </div>
               <div class="p-4 rounded-xl bg-gray-800/50 ring-1 ring-gray-800 flex items-center gap-3">
-                <i class="devicon-nextjs-original text-2xl"></i>
-                <div><div class="font-semibold">Next.js</div><div class="text-xs text-gray-400">Frontend & SSR</div></div>
+                <i class="devicon-redis-plain colored text-2xl shrink-0" aria-hidden="true"></i>
+                <div class="min-w-0"><div class="font-semibold">Redis &amp; Celery</div><div class="text-xs text-gray-400">Caching &amp; async task queues</div></div>
               </div>
               <div class="p-4 rounded-xl bg-gray-800/50 ring-1 ring-gray-800 flex items-center gap-3">
-                <i class="devicon-postgresql-plain colored text-2xl"></i>
-                <div><div class="font-semibold">PostgreSQL</div><div class="text-xs text-gray-400">Relational DB design</div></div>
+                <i class="fa-solid fa-network-wired text-2xl shrink-0" aria-hidden="true"></i>
+                <div class="min-w-0"><div class="font-semibold">WebSockets</div><div class="text-xs text-gray-400">Django Channels, realtime</div></div>
               </div>
               <div class="p-4 rounded-xl bg-gray-800/50 ring-1 ring-gray-800 flex items-center gap-3">
-                <i class="devicon-redis-plain text-2xl"></i>
-                <div><div class="font-semibold">Redis</div><div class="text-xs text-gray-400">Caching & queues</div></div>
+                <i class="fa-solid fa-wand-magic-sparkles text-emerald-400 text-2xl shrink-0" aria-hidden="true"></i>
+                <div class="min-w-0"><div class="font-semibold">AI / LLM Features</div><div class="text-xs text-gray-400">OpenRouter, NL classification</div></div>
               </div>
               <div class="p-4 rounded-xl bg-gray-800/50 ring-1 ring-gray-800 flex items-center gap-3">
-                <i class="devicon-typescript-plain colored text-2xl"></i>
-                <div><div class="font-semibold">TypeScript</div><div class="text-xs text-gray-400">Typed JS</div></div>
+                <i class="devicon-nextjs-original text-2xl shrink-0" aria-hidden="true"></i>
+                <div class="min-w-0"><div class="font-semibold">Next.js</div><div class="text-xs text-gray-400">Frontend &amp; SSR</div></div>
               </div>
               <div class="p-4 rounded-xl bg-gray-800/50 ring-1 ring-gray-800 flex items-center gap-3">
-                <i class="devicon-amazonwebservices-original colored text-2xl"></i>
-                <div><div class="font-semibold">AWS</div><div class="text-xs text-gray-400">App Runner, ECS, Amplify</div></div>
+                <i class="devicon-react-original colored text-2xl shrink-0" aria-hidden="true"></i>
+                <div class="min-w-0"><div class="font-semibold">React &amp; React Native</div><div class="text-xs text-gray-400">Web, iOS &amp; Android</div></div>
               </div>
               <div class="p-4 rounded-xl bg-gray-800/50 ring-1 ring-gray-800 flex items-center gap-3">
-                <i class="devicon-docker-plain colored text-2xl"></i>
-                <div><div class="font-semibold">Docker</div><div class="text-xs text-gray-400">Containers & images</div></div>
+                <i class="devicon-typescript-plain colored text-2xl shrink-0" aria-hidden="true"></i>
+                <div class="min-w-0"><div class="font-semibold">TypeScript</div><div class="text-xs text-gray-400">React Query, Zustand</div></div>
               </div>
               <div class="p-4 rounded-xl bg-gray-800/50 ring-1 ring-gray-800 flex items-center gap-3">
-                <i class="devicon-git-plain colored text-2xl"></i>
-                <div><div class="font-semibold">Git</div><div class="text-xs text-gray-400">Version control</div></div>
+                <i class="devicon-tailwindcss-plain colored text-2xl shrink-0" aria-hidden="true"></i>
+                <div class="min-w-0"><div class="font-semibold">Tailwind CSS</div><div class="text-xs text-gray-400">Design systems &amp; UI</div></div>
               </div>
               <div class="p-4 rounded-xl bg-gray-800/50 ring-1 ring-gray-800 flex items-center gap-3">
-                <i class="fa-solid fa-shield-halved text-2xl"></i>
-                <div><div class="font-semibold">Auth</div><div class="text-xs text-gray-400">OAuth, JWT, RBAC</div></div>
+                <i class="devicon-amazonwebservices-plain-wordmark text-2xl shrink-0" aria-hidden="true"></i>
+                <div class="min-w-0"><div class="font-semibold">AWS</div><div class="text-xs text-gray-400">App Runner, ECS, Amplify, S3</div></div>
               </div>
               <div class="p-4 rounded-xl bg-gray-800/50 ring-1 ring-gray-800 flex items-center gap-3">
-                <i class="fa-solid fa-network-wired text-2xl"></i>
-                <div><div class="font-semibold">HTTP / WebSockets</div><div class="text-xs text-gray-400">Realtime & REST</div></div>
+                <i class="devicon-googlecloud-plain colored text-2xl shrink-0" aria-hidden="true"></i>
+                <div class="min-w-0"><div class="font-semibold">Google Cloud</div><div class="text-xs text-gray-400">Cloud Run, Firebase, Functions</div></div>
+              </div>
+              <div class="p-4 rounded-xl bg-gray-800/50 ring-1 ring-gray-800 flex items-center gap-3">
+                <i class="devicon-terraform-plain colored text-2xl shrink-0" aria-hidden="true"></i>
+                <div class="min-w-0"><div class="font-semibold">Terraform</div><div class="text-xs text-gray-400">Infrastructure as code</div></div>
+              </div>
+              <div class="p-4 rounded-xl bg-gray-800/50 ring-1 ring-gray-800 flex items-center gap-3">
+                <i class="devicon-docker-plain colored text-2xl shrink-0" aria-hidden="true"></i>
+                <div class="min-w-0"><div class="font-semibold">Docker</div><div class="text-xs text-gray-400">Containers &amp; images</div></div>
+              </div>
+              <div class="p-4 rounded-xl bg-gray-800/50 ring-1 ring-gray-800 flex items-center gap-3">
+                <i class="devicon-githubactions-plain colored text-2xl shrink-0" aria-hidden="true"></i>
+                <div class="min-w-0"><div class="font-semibold">CI/CD</div><div class="text-xs text-gray-400">GitHub Actions, automated deploys</div></div>
+              </div>
+              <div class="p-4 rounded-xl bg-gray-800/50 ring-1 ring-gray-800 flex items-center gap-3">
+                <i class="fa-solid fa-vial-circle-check text-emerald-400 text-2xl shrink-0" aria-hidden="true"></i>
+                <div class="min-w-0"><div class="font-semibold">Testing</div><div class="text-xs text-gray-400">Pytest, Postman, Swagger</div></div>
+              </div>
+              <div class="p-4 rounded-xl bg-gray-800/50 ring-1 ring-gray-800 flex items-center gap-3">
+                <i class="fa-solid fa-credit-card text-emerald-400 text-2xl shrink-0" aria-hidden="true"></i>
+                <div class="min-w-0"><div class="font-semibold">Payments</div><div class="text-xs text-gray-400">Paystack, Stripe, Flutterwave, Monnify</div></div>
+              </div>
+              <div class="p-4 rounded-xl bg-gray-800/50 ring-1 ring-gray-800 flex items-center gap-3">
+                <i class="fa-solid fa-shield-halved text-2xl shrink-0" aria-hidden="true"></i>
+                <div class="min-w-0"><div class="font-semibold">Auth &amp; Security</div><div class="text-xs text-gray-400">OAuth, JWT, RBAC</div></div>
               </div>
             </div>
           </div>
@@ -451,20 +544,20 @@
         <section id="resume" class="p-8 lg:p-16" data-aos="fade-up">
           <div class="max-w-4xl mx-auto">
             <div class="mb-6">
-              <h3 class="text-2xl font-semibold">Resume</h3>
+              <h2 class="text-2xl font-semibold">Resume</h2>
               <p class="text-gray-400 mt-2">
-                Backend-first engineer with a track record of shipping production products — APIs, mobile apps, and full-stack platforms.
+                Backend-first engineer with a track record of shipping production products — APIs, cloud infrastructure, mobile apps and full-stack platforms.
               </p>
             </div>
 
             <div class="grid lg:grid-cols-2 gap-8">
               <!-- left -->
               <div>
-                <h4 class="text-lg font-semibold mb-3">Summary</h4>
+                <h3 class="text-lg font-semibold mb-3">Summary</h3>
                 <div class="p-4 rounded-xl bg-gray-800/50 ring-1 ring-gray-800">
-                  <h5 class="font-semibold">Ezekiel Okebule</h5>
+                  <h4 class="font-semibold">Ezekiel Okebule</h4>
                   <p class="text-sm text-gray-300 italic">
-                    Software Engineer & Founder with experience shipping production APIs, React Native mobile apps, and full-stack platforms. Comfortable from backend architecture to app store deployment.
+                    Full-stack engineer with 4+ years shipping production systems in Python/Django, React/Next.js and cloud infrastructure across AWS and GCP. Delivered across fintech, logistics, social networking and streaming — comfortable in agile teams, from architecture through deployment.
                   </p>
                   <ul class="mt-3 text-sm text-gray-400 space-y-1">
                     <li>Lagos, Nigeria</li>
@@ -473,9 +566,9 @@
                   </ul>
                 </div>
 
-                <h4 class="text-lg font-semibold mt-6 mb-3">Education</h4>
+                <h3 class="text-lg font-semibold mt-6 mb-3">Education</h3>
                 <div class="p-4 rounded-xl bg-gray-800/50 ring-1 ring-gray-800">
-                  <h5 class="font-semibold">BSc. Computer Science</h5>
+                  <h4 class="font-semibold">BSc. Computer Science</h4>
                   <div class="text-sm text-gray-400">2021 – 2025</div>
                   <div class="text-sm text-gray-300 mt-1">Grade: 4.44/5.0 • Second Class Upper Division</div>
                   <p class="mt-2 text-sm text-gray-300 italic">Olabisi Onabanjo University, Ago-Iwoye, Ogun State, Nigeria</p>
@@ -491,37 +584,40 @@
 
               <!-- right -->
               <div>
-                <h4 class="text-lg font-semibold mb-3">Experience</h4>
+                <h3 class="text-lg font-semibold mb-3">Experience</h3>
                 <div class="space-y-4">
 
                   <!-- Backend Developer, Gig-gap -->
                   <div class="p-4 rounded-xl bg-gray-800/50 ring-1 ring-gray-800">
-                    <h5 class="font-semibold">Backend Developer — Gig-gap</h5>
-                    <div class="text-sm text-gray-400">January 2026 – Present • Remote</div>
+                    <h4 class="font-semibold">Backend Developer — GigGap</h4>
+                    <div class="text-sm text-gray-400">January 2026 – Present • Gambia (Remote)</div>
                     <ul class="mt-3 text-sm text-gray-300 list-disc list-inside">
-                      <li>Building backend systems using Django and Django REST Framework.</li>
-                      <li>Managing cloud infrastructure with Terraform on AWS.</li>
+                      <li>Building backend systems for a skilled-professional marketplace using Django and Django REST Framework.</li>
+                      <li>Managing containerized cloud infrastructure with Terraform and Docker on AWS.</li>
+                      <li>Contributing across a shared codebase on task-based assignments within an agile framework.</li>
                     </ul>
                   </div>
 
                   <!-- Software Engineer, Ultimate Mobile Apps -->
                   <div class="p-4 rounded-xl bg-gray-800/50 ring-1 ring-gray-800">
-                    <h5 class="font-semibold">Software Engineer — Ultimate Mobile Apps</h5>
+                    <h4 class="font-semibold">Software Engineer — Ultimate Mobile Apps</h4>
                     <div class="text-sm text-gray-400">August 2025 – Present • Maine, USA (Remote)</div>
                     <ul class="mt-3 text-sm text-gray-300 list-disc list-inside">
                       <li>Delivered 20+ full-stack applications as part of an 80-project suite for a US-based client.</li>
                       <li>Shipped <strong class="text-white">NoLimitFlix</strong> — a movie streaming platform live on the App Store, Play Store, and web.</li>
                       <li>Built <strong class="text-white">Liberty Social</strong> — a next-gen social media platform live on Play Store and web.</li>
+                      <li>Shipped AI-powered features — including a mood-based recommendation engine using OpenRouter for natural-language mood classification.</li>
+                      <li>Built frontend-heavy user flows (forms, dashboards, interactive components, data-driven UIs) in React/Next.js with TypeScript.</li>
                       <li>Cloud deployments via AWS App Runner, ECS, Amplify, and ELB.</li>
                     </ul>
                   </div>
 
                   <!-- Goufer PLC -->
                   <div class="p-4 rounded-xl bg-gray-800/50 ring-1 ring-gray-800">
-                    <h5 class="font-semibold">Backend Developer — Goufer PLC</h5>
+                    <h4 class="font-semibold">Backend Developer — Goufer PLC</h4>
                     <div class="text-sm text-gray-400">May 2024 – November 2024 • Lekki, Lagos</div>
                     <ul class="mt-3 text-sm text-gray-300 list-disc list-inside">
-                      <li>Built 15+ API endpoints serving 1,000+ daily users.</li>
+                      <li>Built 15+ API endpoints serving 1,000+ daily vendors and users.</li>
                       <li>Created real-time chat using Django Channels.</li>
                       <li>Integrated Twilio for phone verification (reduced fake signups by 40%).</li>
                       <li>Improved API performance by 35% via query optimization.</li>
@@ -530,17 +626,17 @@
 
                   <!-- Freelance -->
                   <div class="p-4 rounded-xl bg-gray-800/50 ring-1 ring-gray-800">
-                    <h5 class="font-semibold">Freelance Developer</h5>
-                    <div class="text-sm text-gray-400">2021 – Present • Remote</div>
+                    <h4 class="font-semibold">Freelance Developer — Upwork</h4>
+                    <div class="text-sm text-gray-400">2021 – December 2025 • Remote</div>
                     <ul class="mt-3 text-sm text-gray-300 list-disc list-inside">
-                      <li>Delivered full-stack web projects for product brands and startups across Nigeria.</li>
-                      <li>Built payment integrations with Paystack, Stripe, Flutterwave, and Monnify.</li>
+                      <li>Delivered 12+ projects for fintech, e-commerce, and education startups.</li>
+                      <li>Built high-reliability payment systems with Paystack, Stripe, Flutterwave, and Monnify.</li>
                     </ul>
                   </div>
 
                   <!-- Zuri Team -->
                   <div class="p-4 rounded-xl bg-gray-800/50 ring-1 ring-gray-800">
-                    <h5 class="font-semibold">Software Developer Intern — Zuri Team</h5>
+                    <h4 class="font-semibold">Software Developer Intern — Zuri Team</h4>
                     <div class="text-sm text-gray-400">February 2020 – August 2020 • Remote</div>
                     <ul class="mt-3 text-sm text-gray-300 list-disc list-inside">
                       <li>Built APIs and collaborated on a CSV chunking service.</li>
@@ -553,7 +649,7 @@
 
             <!-- GitHub Stats -->
             <div id="stats" class="mt-10" data-aos="fade-up">
-              <h4 class="text-lg font-semibold mb-4">📊 GitHub Stats</h4>
+              <h3 class="text-lg font-semibold mb-4">📊 GitHub Stats</h3>
               <div class="max-w-4xl mx-auto grid gap-4">
                 <img
                   src="https://nirzak-streak-stats.vercel.app/?user=Carnage999-max&theme=dark&hide_border=false"
@@ -561,6 +657,7 @@
                   class="w-full rounded-xl shadow-md skeleton-img"
                   loading="lazy"
                   onload="this.classList.remove('skeleton-img')"
+                  onerror="this.closest('#stats').remove()"
                 />
               </div>
             </div>
@@ -572,7 +669,7 @@
         <!-- PROJECTS -->
         <section id="projects" class="p-8 lg:p-16" data-aos="fade-up">
           <div class="max-w-4xl mx-auto">
-            <h3 class="text-2xl font-semibold">Projects</h3>
+            <h2 class="text-2xl font-semibold">Projects</h2>
             <p class="text-gray-400 mt-2">Things I've built and shipped.</p>
 
             <div class="mt-6 grid md:grid-cols-2 gap-6">
@@ -582,20 +679,20 @@
                 <div class="flex items-start justify-between gap-4 flex-wrap">
                   <div>
                     <div class="flex items-center gap-2 flex-wrap">
-                      <h5 class="font-semibold text-lg">NoLimitFlix</h5>
+                      <h3 class="font-semibold text-lg">NoLimitFlix</h3>
                       <span class="store-badge badge-live"><i class="fa-solid fa-circle text-[6px] animate-pulse"></i> Live</span>
                     </div>
                     <div class="flex flex-wrap gap-2 mt-2">
-                      <a href="https://www.nolimitflix.com" target="_blank" class="store-badge badge-web"><i class="fa-solid fa-globe text-[9px]"></i> Web</a>
-                      <a href="https://apps.apple.com/sa/app/no-limit-flix/id6760540399" target="_blank" class="store-badge badge-appstore"><i class="fa-brands fa-app-store-ios text-[10px]"></i> App Store</a>
-                      <a href="https://play.google.com/store/apps/details?id=com.nolimitflix.app" target="_blank" class="store-badge badge-playstore"><i class="fa-brands fa-google-play text-[10px]"></i> Play Store</a>
+                      <a href="https://www.nolimitflix.com" target="_blank" rel="noopener noreferrer" class="store-badge badge-web"><i class="fa-solid fa-globe text-[9px]"></i> Web</a>
+                      <a href="https://apps.apple.com/sa/app/no-limit-flix/id6760540399" target="_blank" rel="noopener noreferrer" class="store-badge badge-appstore"><i class="fa-brands fa-app-store-ios text-[10px]"></i> App Store</a>
+                      <a href="https://play.google.com/store/apps/details?id=com.nolimitflix.app" target="_blank" rel="noopener noreferrer" class="store-badge badge-playstore"><i class="fa-brands fa-google-play text-[10px]"></i> Play Store</a>
                     </div>
                   </div>
                   <i class="spark fa-solid fa-film text-primary/80 text-xl mt-1"></i>
                 </div>
                 <p class="text-sm text-gray-400 mt-1"><strong class="text-gray-300">Technologies:</strong> React Native, Django REST Framework, Next.js, PostgreSQL, AWS</p>
                 <p class="mt-3 text-sm text-gray-300 leading-relaxed">
-                  A movie streaming library and mood-based content picker, available on web, iOS (App Store), and Android (Play Store). Built end-to-end — from backend API to React Native mobile app to web frontend.
+                  A movie streaming platform with an <strong class="text-white">AI recommendation engine</strong>: users describe their mood in plain text and the app classifies that input via OpenRouter to surface matching films. Built end-to-end — backend API, React Native mobile app and web frontend — and live on web, iOS and Android.
                 </p>
               </article>
 
@@ -604,12 +701,12 @@
                 <div class="flex items-center justify-between gap-2 flex-wrap">
                   <div>
                     <div class="flex items-center gap-2 flex-wrap">
-                      <h5 class="font-semibold">Liberty Social</h5>
+                      <h3 class="font-semibold">Liberty Social</h3>
                       <span class="store-badge badge-live"><i class="fa-solid fa-circle text-[6px] animate-pulse"></i> Live</span>
                     </div>
                     <div class="flex flex-wrap gap-2 mt-2">
-                      <a href="https://play.google.com/store/apps/details?id=com.libertysocial.app" target="_blank" class="store-badge badge-playstore"><i class="fa-brands fa-google-play text-[10px]"></i> Play Store</a>
-                      <a href="https://mylibertysocial.com" target="_blank" class="store-badge badge-web"><i class="fa-solid fa-globe text-[9px]"></i> Web</a>
+                      <a href="https://play.google.com/store/apps/details?id=com.libertysocial.app" target="_blank" rel="noopener noreferrer" class="store-badge badge-playstore"><i class="fa-brands fa-google-play text-[10px]"></i> Play Store</a>
+                      <a href="https://mylibertysocial.com" target="_blank" rel="noopener noreferrer" class="store-badge badge-web"><i class="fa-solid fa-globe text-[9px]"></i> Web</a>
                     </div>
                   </div>
                   <i class="spark fa-solid fa-share-nodes text-primary/80"></i>
@@ -623,7 +720,7 @@
               <!-- StudentPay -->
               <article class="card p-5 rounded-xl bg-gray-800/50 ring-1 ring-gray-800 group">
                 <div class="flex items-center justify-between">
-                  <h5 class="font-semibold">StudentPay Platform</h5>
+                  <h3 class="font-semibold">StudentPay Platform</h3>
                   <i class="spark fa-solid fa-credit-card text-primary/80"></i>
                 </div>
                 <p class="text-sm text-gray-400 mt-2"><strong class="text-gray-300">Technologies:</strong> Django REST Framework, Next.js, PostgreSQL, Redis, Paystack, Monnify, Supabase</p>
@@ -631,8 +728,8 @@
                   Payment processing platform handling 2,000+ students with automated reconciliation (99.8% accuracy). &lt;200ms API response times via PostgreSQL + Redis optimization. Reduced manual processing time by 80%.
                 </p>
                 <div class="mt-3 flex gap-2 flex-wrap">
-                  <a href="https://student-pay.sevalla.app/" target="_blank" class="store-badge badge-web"><i class="fa-solid fa-globe text-[9px]"></i> Live Demo</a>
-                  <a href="https://github.com/carnage999-max/student-pay-frontend" target="_blank" class="px-3 py-1 rounded bg-gray-700 inline-flex items-center gap-2 hover:bg-gray-600 text-xs">
+                  <a href="https://student-pay.sevalla.app/" target="_blank" rel="noopener noreferrer" class="store-badge badge-web"><i class="fa-solid fa-globe text-[9px]"></i> Live Demo</a>
+                  <a href="https://github.com/carnage999-max/student-pay-frontend" target="_blank" rel="noopener noreferrer" class="px-3 py-1 rounded bg-gray-700 inline-flex items-center gap-2 hover:bg-gray-600 text-xs">
                     <i class="fa-brands fa-github"></i> GitHub
                   </a>
                 </div>
@@ -641,7 +738,7 @@
               <!-- Fractional -->
               <article class="card p-5 rounded-xl bg-gray-800/50 ring-1 ring-gray-800 group">
                 <div class="flex items-center justify-between">
-                  <h5 class="font-semibold">Fractional — Hedera Hackathon</h5>
+                  <h3 class="font-semibold">Fractional — Hedera Hackathon</h3>
                   <i class="spark fa-solid fa-chart-pie text-primary/80"></i>
                 </div>
                 <p class="text-sm text-gray-400 mt-2"><strong class="text-gray-300">Technologies:</strong> Hedera, Next.js, Smart Contracts, Node.js</p>
@@ -649,8 +746,8 @@
                   End-to-end Web3 platform where creators mint NFTs, issue fractional FT shares, and distribute dividends via Hedera smart contracts.
                 </p>
                 <div class="mt-3 flex gap-2 flex-wrap">
-                  <a href="https://fractional-three.vercel.app" target="_blank" class="store-badge badge-web"><i class="fa-solid fa-globe text-[9px]"></i> Live Demo</a>
-                  <a href="https://github.com/carnage999-max/Fractional-" target="_blank" class="px-3 py-1 rounded bg-gray-700 inline-flex items-center gap-2 hover:bg-gray-600 text-xs">
+                  <a href="https://fractional-three.vercel.app" target="_blank" rel="noopener noreferrer" class="store-badge badge-web"><i class="fa-solid fa-globe text-[9px]"></i> Live Demo</a>
+                  <a href="https://github.com/carnage999-max/Fractional-" target="_blank" rel="noopener noreferrer" class="px-3 py-1 rounded bg-gray-700 inline-flex items-center gap-2 hover:bg-gray-600 text-xs">
                     <i class="fa-brands fa-github"></i> GitHub
                   </a>
                 </div>
@@ -659,7 +756,7 @@
               <!-- Client Work -->
               <article class="card p-5 rounded-xl bg-gray-800/50 ring-1 ring-gray-800 group">
                 <div class="flex items-center justify-between">
-                  <h5 class="font-semibold">Client Work</h5>
+                  <h3 class="font-semibold">Client Work</h3>
                   <i class="spark fa-solid fa-briefcase text-primary/80"></i>
                 </div>
                 <p class="text-sm text-gray-400 mt-2"><strong class="text-gray-300">Technologies:</strong> Next.js, TypeScript, CSS Modules, Django</p>
@@ -677,7 +774,7 @@
         <!-- CONTACT -->
         <section id="contact" class="p-8 lg:p-16" data-aos="fade-up">
           <div class="max-w-4xl mx-auto">
-            <h3 class="text-2xl font-semibold">Contact</h3>
+            <h2 class="text-2xl font-semibold">Contact</h2>
             <p class="text-gray-400 mt-2">Open to building and improving startup and existing products.</p>
             <div class="mt-5 grid sm:grid-cols-2 gap-4">
               <a href="mailto:jamesezekiel039@gmail.com" class="p-4 rounded-xl ring-1 ring-gray-800 bg-gray-800/50 hover:bg-gray-800 flex items-center gap-3">
@@ -722,17 +819,37 @@
     </script>
     <script defer src="/_vercel/insights/script.js"></script>
     <script>
-      AOS.init({ once: true, duration: 600, easing: "ease-out" });
+      // Failsafe: AOS hides every [data-aos] section until it animates them in.
+      // If the CDN is blocked or the script errors, force everything visible.
+      function revealAll() { document.documentElement.classList.add("no-aos"); }
+      try {
+        if (typeof AOS === "undefined") {
+          revealAll();
+        } else {
+          AOS.init({ once: true, duration: 600, easing: "ease-out" });
+          // Belt and braces: if anything is still invisible shortly after init,
+          // drop the animations rather than leave the page blank.
+          setTimeout(function () {
+            var el = document.querySelector("[data-aos]");
+            if (el && parseFloat(getComputedStyle(el).opacity) === 0 && !el.classList.contains("aos-init")) {
+              revealAll();
+            }
+          }, 1200);
+        }
+      } catch (e) {
+        revealAll();
+      }
       const y = document.getElementById("year");
       if (y) y.textContent = new Date().getFullYear();
 
       // Typed effect
       const typedEl = document.getElementById("typed");
       const phrases = [
-        "Software Engineer & Founder",
-        "Django • React Native • Next.js",
-        "APIs, Mobile Apps, Real Products",
-        "AWS • PostgreSQL • TypeScript",
+        "Full-Stack Engineer · Backend · Python",
+        "Django • DRF • PostgreSQL • Celery",
+        "Next.js • React Native • TypeScript",
+        "AWS • GCP • Terraform • Docker",
+        "APIs, cloud infra, and shipped products",
       ];
       let pi = 0, ci = 0, deleting = false;
       function typeLoop() {
