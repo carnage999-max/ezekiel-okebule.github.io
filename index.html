@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>Ezekiel Okebule — Full-Stack Engineer | Django, Python, AWS</title>
-    <link rel="canonical" href="https://ezekiel-okebule.github.io/" />
+    <link rel="canonical" href="https://ezekiel-okebule.vercel.app/" />
     <meta
       name="description"
       content="Ezekiel Okebule — full-stack engineer with 4+ years shipping production systems in Python/Django, React/Next.js and cloud infrastructure on AWS and GCP. Builder of NoLimitFlix, Liberty Social and StudentPay."
@@ -20,15 +20,15 @@
     <link rel="author" href="https://github.com/carnage999-max" />
     <meta property="og:site_name" content="Ezekiel Okebule" />
     <meta property="og:title" content="Ezekiel Okebule — Full-Stack Engineer" />
-    <meta property="og:image" content="https://ezekiel-okebule.github.io/assets/img/og-image.jpg" />
+    <meta property="og:image" content="https://ezekiel-okebule.vercel.app/assets/img/og-image.jpg" />
     <meta property="og:image:alt" content="Ezekiel Okebule — Full-Stack Engineer, Backend, Python" />
     <meta property="og:description" content="Full-stack engineer shipping production APIs, cloud infrastructure and mobile apps — Django, Next.js, AWS and GCP." />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://ezekiel-okebule.github.io/" />
+    <meta property="og:url" content="https://ezekiel-okebule.vercel.app/" />
     <meta property="og:locale" content="en_US" />
-    <meta property="twitter:image" content="https://ezekiel-okebule.github.io/assets/img/og-image.jpg" />
+    <meta property="twitter:image" content="https://ezekiel-okebule.vercel.app/assets/img/og-image.jpg" />
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:title" content="Ezekiel Okebule — Full-Stack Engineer" />
     <meta property="twitter:description" content="Production APIs, cloud infrastructure and shipped mobile apps — Django, Next.js, AWS and GCP." />
@@ -40,8 +40,8 @@
       "name": "Ezekiel Okebule",
       "jobTitle": "Full-Stack Engineer",
       "description": "Full-stack engineer with 4+ years shipping production systems in Python/Django, React/Next.js and cloud infrastructure across AWS and GCP. Experience spans fintech, logistics, social networking and streaming.",
-      "url": "https://ezekiel-okebule.github.io/",
-      "image": "https://ezekiel-okebule.github.io/assets/img/og-image.jpg",
+      "url": "https://ezekiel-okebule.vercel.app/",
+      "image": "https://ezekiel-okebule.vercel.app/assets/img/og-image.jpg",
       "knowsAbout": [
         "Python", "Django", "Django REST Framework", "PostgreSQL", "Redis", "Celery",
         "Next.js", "React", "React Native", "TypeScript", "Tailwind CSS",
@@ -103,7 +103,7 @@
 
       #typed {
         display: inline-block;
-        min-width: 22ch;
+        min-width: 0;
         max-width: 100%;
         min-height: 1.45rem;
         vertical-align: middle;
@@ -122,6 +122,7 @@
         animation: blink 1s steps(2, start) infinite;
       }
       @keyframes blink { 50% { opacity: 0; } }
+      @media (min-width: 640px) { #typed { min-width: 22ch; } }
 
       .will-change-transform { will-change: transform; }
 
@@ -158,8 +159,19 @@
       }
       .tap-target { min-height: 44px; }
 
-      @media (max-width: 1024px) {
-        #hero { padding-top: 3.25rem; padding-bottom: 3.25rem; }
+      @media (max-width: 1023.98px) {
+        #hero {
+          min-height: 0;
+          padding-top: 1rem;
+          padding-bottom: 1.75rem;
+        }
+      }
+
+      /* Section gutters: p-8 (32px) each side plus the card's own padding left
+         a very narrow text column on small phones. */
+      @media (max-width: 639.98px) {
+        main > section,
+        main > footer { padding-left: 1.25rem; padding-right: 1.25rem; }
       }
 
       [data-parallax] { transition: transform 0.12s linear; }
@@ -336,20 +348,20 @@
       <main class="flex-1 min-w-0">
 
         <!-- MOBILE IDENTITY HEADER (the sidebar is desktop-only) -->
-        <div class="lg:hidden flex items-center gap-4 px-8 pt-8">
+        <div class="lg:hidden flex items-center gap-3 px-5 pb-3 border-b border-gray-800 bg-gray-900" style="padding-top: calc(1rem + env(safe-area-inset-top));">
           <picture>
             <source srcset="assets/img/profile.webp 1x, assets/img/profile@2x.webp 2x" type="image/webp" />
             <img
               src="assets/img/profile.jpg"
               alt="Portrait of Ezekiel Okebule"
               width="400" height="440"
-              class="w-16 h-[4.4rem] object-cover rounded-lg ring-2 ring-gray-800 shrink-0"
+              class="w-14 h-[3.85rem] object-cover rounded-lg ring-2 ring-gray-800 shrink-0"
             />
           </picture>
-          <div class="min-w-0">
-            <div class="text-lg font-bold text-white leading-tight">Ezekiel Okebule</div>
-            <div class="text-xs text-gray-400 mt-0.5">Full-Stack Engineer &amp; Founder</div>
-            <div class="mt-2 flex gap-3">
+          <div class="min-w-0 flex-1">
+            <div class="text-base font-bold text-white leading-tight">Ezekiel Okebule</div>
+            <div class="text-[11px] text-gray-400 mt-0.5">Full-Stack Engineer &amp; Founder</div>
+            <div class="mt-1.5 flex gap-3">
               <a href="https://github.com/carnage999-max" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="text-gray-300 hover:text-primary"><i class="fa-brands fa-github"></i></a>
               <a href="https://linkedin.com/in/ezekiel-okebule" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="text-gray-300 hover:text-primary"><i class="fa-brands fa-linkedin"></i></a>
               <a href="https://X.com/Ezekiel11011" target="_blank" rel="noopener noreferrer" aria-label="X" class="text-gray-300 hover:text-primary"><i class="fa-brands fa-x-twitter"></i></a>
@@ -365,12 +377,12 @@
           </div>
 
           <div class="max-w-4xl mx-auto w-full will-change-transform" data-parallax="0.05">
-            <div class="rounded-2xl bg-gradient-to-b from-gray-800/70 to-transparent p-6 md:p-8 ring-1 ring-gray-800" data-aos="fade-up">
-              <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight">
+            <div class="rounded-2xl bg-gradient-to-b from-gray-800/70 to-transparent p-5 sm:p-6 md:p-8 ring-1 ring-gray-800" data-aos="fade-up">
+              <h1 class="text-[1.65rem] sm:text-4xl lg:text-5xl font-extrabold leading-tight">
                 Hi, I'm <span class="text-white">Ezekiel Okebule</span> 👋
               </h1>
 
-              <p class="mt-3 text-gray-300 max-w-2xl">
+              <p class="mt-3 text-sm sm:text-base text-gray-300 max-w-2xl">
                 Full-stack engineer with 4+ years shipping production systems in Python/Django, React/Next.js and cloud infrastructure across AWS and GCP — from backend architecture through to apps live on the App Store and Play Store.
               </p>
 
@@ -605,7 +617,7 @@
                     <ul class="mt-3 text-sm text-gray-300 list-disc list-inside">
                       <li>Delivered 20+ full-stack applications as part of an 80-project suite for a US-based client.</li>
                       <li>Shipped <strong class="text-white">NoLimitFlix</strong> — a movie streaming platform live on the App Store, Play Store, and web.</li>
-                      <li>Built <strong class="text-white">Liberty Social</strong> — a next-gen social media platform live on Play Store and web.</li>
+                      <li>Built <strong class="text-white">Liberty Social</strong> — a next-gen social media platform live on the App Store, Play Store and web.</li>
                       <li>Shipped AI-powered features — including a mood-based recommendation engine using OpenRouter for natural-language mood classification.</li>
                       <li>Built frontend-heavy user flows (forms, dashboards, interactive components, data-driven UIs) in React/Next.js with TypeScript.</li>
                       <li>Cloud deployments via AWS App Runner, ECS, Amplify, and ELB.</li>
@@ -705,15 +717,16 @@
                       <span class="store-badge badge-live"><i class="fa-solid fa-circle text-[6px] animate-pulse"></i> Live</span>
                     </div>
                     <div class="flex flex-wrap gap-2 mt-2">
-                      <a href="https://play.google.com/store/apps/details?id=com.libertysocial.app" target="_blank" rel="noopener noreferrer" class="store-badge badge-playstore"><i class="fa-brands fa-google-play text-[10px]"></i> Play Store</a>
                       <a href="https://mylibertysocial.com" target="_blank" rel="noopener noreferrer" class="store-badge badge-web"><i class="fa-solid fa-globe text-[9px]"></i> Web</a>
+                      <a href="https://apps.apple.com/at/app/liberty-social/id1378315639" target="_blank" rel="noopener noreferrer" class="store-badge badge-appstore"><i class="fa-brands fa-app-store-ios text-[10px]"></i> App Store</a>
+                      <a href="https://play.google.com/store/apps/details?id=com.libertysocial.app" target="_blank" rel="noopener noreferrer" class="store-badge badge-playstore"><i class="fa-brands fa-google-play text-[10px]"></i> Play Store</a>
                     </div>
                   </div>
                   <i class="spark fa-solid fa-share-nodes text-primary/80"></i>
                 </div>
                 <p class="text-sm text-gray-400 mt-2"><strong class="text-gray-300">Technologies:</strong> DRF, Next.js, React Native, AWS, PostgreSQL, Celery, Redis, Firebase</p>
                 <p class="mt-2 text-sm text-gray-300 leading-relaxed">
-                  A modern social network with marketplace, posts, real-time chat, media uploads, notifications, and business pages. Fully deployed on AWS (App Runner + Amplify). Live on Play Store and web.
+                  A modern social network with marketplace, posts, real-time chat, media uploads, notifications, and business pages. Fully deployed on AWS (App Runner + Amplify). Live on the App Store, Play Store and web.
                 </p>
               </article>
 
